@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ترنيمات روحية — برنامج عرض الترانيم والكتاب المقدس للكنيسة</title>
+<meta name="description" content="برنامج مجاني لعرض الترانيم الروحية والكتاب المقدس (فان دايك المشكول) على البروجكتور في الكنيسة — Windows">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ترنيمات روحية — للكنيسة">
+<meta property="og:description" content="برنامج مجاني لعرض الترانيم الروحية والكتاب المقدس على البروجكتور. بالرقم، بالكلمة، بالاختصار — ومن غير إنترنت.">
+<meta property="og:image" content="https://tarnematrohiya.github.io/preview.png?v=1">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="640">
+<meta property="og:url" content="https://tarnematrohiya.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tarnematrohiya.github.io/preview.png?v=1">
+<link rel="icon" href="icon.png">
+<style>
+@font-face{font-family:C;src:url(fonts/Cairo.ttf);font-weight:200 1000;font-display:swap}
+:root{--bg:#111215;--bg2:#16171a;--panel:#1f2125;--card:#26292e;--line:#30343a;--txt:#f1f1f2;--mut:#9ea3aa;--acc:#3b82f6;--live:#e5484d;--ok:#30a46c;--gold:#e9c46a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:C,"Segoe UI",Tahoma,sans-serif;line-height:1.7}
+a{color:inherit}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
+bdi{unicode-bidi:isolate}
+kbd{font-family:C;font-size:.85em;background:var(--card);border:1px solid var(--line);border-bottom-width:3px;border-radius:7px;padding:0 8px;white-space:nowrap}
+
+/* top */
+nav{position:sticky;top:0;z-index:20;background:rgba(17,18,21,.85);backdrop-filter:blur(10px);border-bottom:1px solid #ffffff0d}
+nav .w{display:flex;align-items:center;gap:14px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;text-decoration:none}
+.brand img{width:34px;height:34px;border-radius:9px}
+nav .sp{flex:1}
+nav a.l{color:var(--mut);text-decoration:none;font-weight:700;font-size:15px}
+nav a.l:hover{color:var(--txt)}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:14px;padding:12px 24px;font-weight:800;text-decoration:none;font-size:17px;border:1px solid transparent;cursor:pointer;font-family:C}
+.btn.p{background:var(--acc);color:#fff;box-shadow:0 10px 30px #3b82f655}
+.btn.p:hover{background:#2563eb}
+.btn.s{background:var(--panel);border-color:var(--line);color:var(--txt);font-size:15px;padding:10px 18px}
+.btn.sm{padding:8px 16px;font-size:15px}
+nav .btn{padding:8px 18px;font-size:15px}
+.ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* hero */
+.hero{position:relative;padding:64px 0 30px;text-align:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-200px -20% auto;height:640px;background:radial-gradient(closest-side,#3b82f633,transparent 70%);pointer-events:none}
+.hero .logo{width:92px;height:92px;border-radius:24px;box-shadow:0 18px 50px #0008}
+.hero h1{font-size:54px;line-height:1.2;margin:18px 0 6px;font-weight:900;letter-spacing:-.5px}
+.hero .sub{font-size:21px;color:#c9ced5;max-width:720px;margin:0 auto}
+.hero .sub b{color:#fff}
+.cta{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:28px}
+.cta .row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.ver{font-size:14px;color:var(--mut)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:24px auto 0;max-width:820px}
+.pills span{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:14px;font-weight:700;color:#d4d8de}
+
+/* demo */
+.demo{margin:34px auto 0;max-width:1060px}
+.frame{border-radius:18px;border:1px solid #ffffff14;background:#0b0c0e;padding:10px;box-shadow:0 40px 90px #000c,0 0 0 1px #000}
+.dots{display:flex;gap:6px;padding:2px 6px 10px}.dots i{width:11px;height:11px;border-radius:50%;background:#3a3d43}
+.dots i:nth-child(1){background:#ff5f57}.dots i:nth-child(2){background:#febc2e}.dots i:nth-child(3){background:#28c840}
+#wrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:10px;background:var(--bg2)}
+#stage{position:absolute;top:0;right:0;width:960px;height:540px;transform-origin:top right;font-size:13px}
+.cap{min-height:58px;margin-top:16px;font-size:19px;font-weight:700;color:#dfe3e8}
+.cap small{display:block;color:var(--mut);font-size:15px;font-weight:600}
+
+/* the little app inside the demo */
+.a{position:absolute;inset:0;display:grid;grid-template-rows:42px 1fr;background:var(--bg2)}
+.a .tb{display:flex;align-items:center;gap:8px;padding:0 12px;background:var(--panel);border-bottom:1px solid var(--line)}
+.a .tb b{font-size:14px;display:flex;gap:6px;align-items:center}.a .tb b i{width:20px;height:20px;border-radius:6px;background:var(--acc);display:inline-block;position:relative}
+.a .tb b i::before,.a .tb b i::after{content:"";position:absolute;background:#fff;border-radius:2px}.a .tb b i::before{width:2px;height:12px;left:9px;top:4px}.a .tb b i::after{width:8px;height:2px;left:6px;top:8px}
+.a .tb .x{margin-right:auto;display:flex;gap:6px}.a .tb .x span{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:2px 10px;font-size:11px;font-weight:700}
+.a .tb .x span.b{background:var(--acc);border-color:var(--acc)}.a .tb .x span.r.on{background:var(--live);border-color:var(--live)}
+.a .m{display:grid;grid-template-columns:230px minmax(0,1fr) 300px;min-height:0}
+.a .lib{border-left:1px solid var(--line);padding:10px;display:flex;flex-direction:column;gap:8px;min-height:0}
+.a .tabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--bg2);border:1px solid var(--line);border-radius:9px;padding:3px}
+.a .tabs span{text-align:center;font-weight:800;font-size:11px;padding:4px;border-radius:7px;color:var(--mut)}.a .tabs span.on{background:var(--card);color:var(--txt)}
+.a .q{background:var(--bg2);border:1px solid var(--line);border-radius:9px;padding:6px 10px;min-height:30px;font-size:13px;font-weight:700}
+.a .q.f{border-color:var(--acc)}.a .q .car{display:inline-block;width:1.5px;height:14px;background:var(--acc);vertical-align:middle;animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+.a .res{display:flex;flex-direction:column;gap:3px;overflow:hidden}
+.a .it{display:flex;gap:8px;padding:6px 8px;border-radius:8px;border:1px solid transparent;font-size:12px;font-weight:700;align-items:flex-start;transition:all .2s}
+.a .it em{font-style:normal;min-width:28px;height:20px;border-radius:6px;background:var(--bg2);color:var(--mut);display:flex;align-items:center;justify-content:center;font-size:10px}
+.a .it small{display:block;color:var(--mut);font-weight:600;font-size:10px;line-height:1.5}
+.a .it.k{background:var(--card);border-color:var(--acc);box-shadow:0 0 0 1.5px var(--acc) inset}
+.a .mid{padding:10px 12px;display:flex;flex-direction:column;gap:8px;min-height:0;min-width:0;overflow:hidden;border-left:1px solid var(--line)}
+.a .ttl{font-weight:800;font-size:13px}.a .ttl small{color:var(--mut);font-weight:600;margin-right:6px}
+.a .sl{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.a .s{border-radius:10px;padding:18px 8px 8px;font-size:10.5px;line-height:1.8;text-align:center;font-weight:700;border:2px solid transparent;position:relative;min-height:96px}
+.a .s.w{background:#fff;color:#000}.a .s.k{background:#000;color:#fff}
+.a .s .lb{position:absolute;top:4px;right:6px;font-size:9px;background:#0002;border-radius:4px;padding:0 5px}.a .s.k .lb{background:#fff2}
+.a .s.cue{border-color:var(--acc)}.a .s.live{border-color:var(--live)}
+.a .vl{display:flex;flex-direction:column;gap:3px}
+.a .v{background:#000;color:#fff;border:1.5px solid transparent;border-radius:6px;padding:4px 34px 4px 8px;font-size:10.5px;position:relative;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.a .v i{position:absolute;right:6px;font-style:normal;font-size:9px;color:#aaa}.a .v.cue{border-color:var(--acc)}.a .v.live{border-color:var(--live)}
+.a .rt{padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+.a .lbl{display:flex;justify-content:space-between;font-weight:800;font-size:11px}.a .lbl small{color:var(--mut);font-weight:600}
+.a .lbl .d{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--live);margin-left:5px}
+.a .scr{aspect-ratio:16/9;border-radius:9px;border:3px solid var(--live);display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:11.5px;line-height:1.9;padding:8px;background:#000;color:#fff;transition:background .15s}
+.a .scr.w{background:#fff;color:#000}.a .scr.sm{width:62%;align-self:center;border-color:var(--acc);font-size:8px;border-width:2px}
+.a .ctl{display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:5px}.a .ctl span{background:var(--card);border:1px solid var(--line);border-radius:8px;text-align:center;font-weight:800;font-size:11px;padding:6px 0}.a .ctl span.g{background:var(--live);border-color:var(--live)}
+/* projector + keys overlay */
+.proj{position:absolute;left:345px;bottom:22px;width:260px;aspect-ratio:16/9;background:#000;border-radius:8px;border:2px solid #444;box-shadow:0 14px 40px #000c;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:12px;line-height:1.9;padding:10px;color:#fff;transition:background .15s}
+.a .scr .r{display:block;font-size:8.5px;color:#999;font-weight:600}.proj.w{background:#fff;color:#000}.proj .r{display:block;font-size:9px;color:#999;font-weight:600}
+.proj::after{content:"البروجكتور";position:absolute;top:-22px;right:4px;font-size:11px;color:#bbb;font-weight:700}
+.keys{position:absolute;right:22px;bottom:26px;display:flex;gap:6px;direction:ltr;pointer-events:none}
+.keys span{background:#f4f4f5;color:#111;border-radius:9px;padding:5px 12px;font-weight:900;font-size:17px;box-shadow:0 4px 0 #b5b5b9,0 10px 24px #0008;animation:pop .2s}
+@keyframes pop{from{transform:translateY(8px);opacity:0}}
+
+/* sections */
+section{padding:80px 0 10px}
+h2{font-size:36px;line-height:1.3;margin:0 0 8px;text-align:center;font-weight:900}
+.lead{text-align:center;color:var(--mut);font-size:18px;max-width:680px;margin:0 auto 34px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.f{background:linear-gradient(180deg,#1d1f23,#18191c);border:1px solid var(--line);border-radius:18px;padding:22px}
+.f .fi{width:42px;height:42px;border-radius:12px;background:#3b82f61f;color:#7fb0ff;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.f h3{margin:0 0 4px;font-size:19px}.f p{margin:0;color:#b5bac1;font-size:15.5px}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.shot{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{padding:12px 16px;font-weight:700;color:#cfd3d9;font-size:15.5px}
+.shot.wide{grid-column:1/-1}
+.kb{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:900px;margin:0 auto}
+.kb div{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-weight:700}
+.kb div span:first-child{color:#cfd3d9}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;position:relative}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-14px;right:20px;width:32px;height:32px;border-radius:50%;background:var(--acc);display:flex;align-items:center;justify-content:center;font-weight:900}
+.step h3{margin:6px 0 4px}.step p{margin:0;color:#b5bac1}
+.warn{margin-top:18px;background:#2a2315;border:1px solid #5c4a1e;border-radius:16px;padding:16px 20px;color:#f1e3c0}
+.warn b{color:#ffd88a}
+.final{text-align:center;padding:90px 0 70px}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--mut);font-size:14px;text-align:center}
+
+/* download form */
+#reg{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+#reg.open{display:flex}
+#reg form{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px;width:100%;max-width:420px;text-align:right}
+#reg h3{margin:0 0 2px;font-size:22px}#reg p{margin:0 0 14px;color:var(--mut)}
+#reg label{display:block;font-weight:700;margin:10px 0 4px}
+#reg input{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:11px 14px;color:var(--txt);font-family:C;font-size:16px;outline:none}
+#reg input:focus{border-color:var(--acc)}
+#reg .e{color:#ff8a8a;min-height:22px;font-size:14px}
+#reg .r{display:flex;gap:8px;margin-top:6px}
+#reg .pv{font-size:12.5px;color:var(--mut);margin-top:10px}
+
+@media (max-width:860px){
+  .hero h1{font-size:38px}.hero .sub{font-size:18px}
+  .grid,.steps{grid-template-columns:1fr}.shots{grid-template-columns:1fr}.kb{grid-template-columns:1fr}
+  nav a.l{display:none} h2{font-size:28px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+ <symbol id="dl" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></symbol>
+ <symbol id="win" viewBox="0 0 24 24"><path d="M3 5.5 10.5 4.5v7H3zM12.5 4.2 21 3v8.5h-8.5zM3 12.5h7.5v7L3 18.5zM12.5 12.5H21V21l-8.5-1.2z" fill="currentColor" stroke="none"/></symbol>
+ <symbol id="k" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></symbol>
+ <symbol id="s" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+ <symbol id="b" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
+ <symbol id="m" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+ <symbol id="w" viewBox="0 0 24 24"><path d="M2 8.8a15 15 0 0 1 20 0"/><path d="M5 12.9a10 10 0 0 1 14 0"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/><path d="M12 20h.01"/><path d="m2 2 20 20"/></symbol>
+ <symbol id="t" viewBox="0 0 24 24"><path d="M4 7V4h16v3"/><path d="M9 20h6M12 4v16"/></symbol>
+ <symbol id="c" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+ <symbol id="r" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></symbol>
+ <symbol id="h" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+ <symbol id="e" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><path d="m3 3 18 18"/></symbol>
+</defs></svg>
+
+<nav><div class="w">
+  <a class="brand" href="#"><img src="icon.png" alt=""><span>ترنيمات روحية</span></a>
+  <span class="sp"></span>
+  <a class="l" href="#features">المميزات</a>
+  <a class="l" href="#screens">الشاشات</a>
+  <a class="l" href="#keys">الاختصارات</a>
+  <a class="l" href="#install">التسطيب</a>
+  <a class="btn p dlbtn" href="https://github.com/tarnematrohiya/tarnemat-rohiya/releases/latest"><svg class="ic"><use href="#dl"/></svg>تحميل</a>
+</div></nav>
+
+<header class="hero"><div class="w">
+  <img class="logo" src="icon.png" alt="ترنيمات روحية">
+  <h1>ترنيمات روحية</h1>
+  <p class="sub">اعرض <b>الترانيم الروحية</b> و<b>الكتاب المقدس</b> على البروجكتور في ثواني — بالرقم، بأي كلمة، أو باختصار الشاهد.</p>
+  <div class="cta">
+    <a class="btn p dlbtn" id="dl" href="https://github.com/tarnematrohiya/tarnemat-rohiya/releases/latest"><svg class="ic"><use href="#win"/></svg>تحميل لـ <bdi>Windows 10 / 11</bdi></a>
+    <a class="btn s sm dlbtn" id="dl7" href="https://github.com/tarnematrohiya/tarnemat-rohiya/releases/latest">نسخة <bdi>Windows 7 / 8</bdi></a>
+    <span class="ver" id="ver">مجاني بالكامل · بيشتغل من غير إنترنت · بيتحدّث لوحده</span>
+  </div>
+  <div class="pills"><span>٣٧٥ ترنيمة من كتاب الترانيم الروحية</span><span>الكتاب المقدس فان دايك مشكول</span><span>بحث حتى لو فيه غلطة</span><span>شاشة عرض أبيض وأسود مريحة</span><span>من غير إنترنت</span></div>
+
+  <div class="demo">
+    <div class="frame"><div class="dots"><i></i><i></i><i></i></div>
+      <div id="wrap"><div id="stage">
+        <div class="a">
+          <div class="tb"><b><i></i>ترنيمات روحية</b><div class="x"><span>طريقة الاستخدام</span><span>الخط والحجم</span><span class="r" id="dB">إخفاء الشاشة</span><span class="b">فتح شاشة العرض</span></div></div>
+          <div class="m">
+            <div class="lib">
+              <div class="tabs"><span class="on" id="tH">الترانيم</span><span id="tB">الكتاب المقدس</span></div>
+              <div class="q" id="dq"><span id="dqt"></span><span class="car"></span></div>
+              <div class="res" id="dres"></div>
+            </div>
+            <div class="mid"><div class="ttl" id="dttl"></div><div id="dslides"></div></div>
+            <div class="rt">
+              <div class="lbl"><span><span class="d"></span>على الشاشة الآن</span><small id="dlr"></small></div>
+              <div class="scr" id="dlive"></div>
+              <div class="lbl" style="width:62%;align-self:center"><span>التالي</span><small id="dcr"></small></div>
+              <div class="scr sm" id="dcue"></div>
+              <div class="ctl"><span>‹ التالي</span><span class="g">▶ اعرض</span><span>السابق ›</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="proj" id="dproj"></div>
+        <div class="keys" id="dkeys"></div>
+      </div></div>
+    </div>
+    <div class="cap" id="cap"></div>
+  </div>
+</div></header>
+
+<section id="features"><div class="w">
+  <h2>كل اللي محتاجه في الاجتماع</h2>
+  <p class="lead">اتعمل علشان اللي قاعد على الكمبيوتر يلحق الترنيمة والآية في لحظتها، والناس تقرا براحة.</p>
+  <div class="grid">
+    <div class="f"><div class="fi"><svg class="ic"><use href="#k"/></svg></div><h3>بالرقم على طول</h3><p><kbd>182</kbd> <kbd>Enter</kbd> تظهر الترنيمة. بعدها <kbd>2</kbd> <kbd>Enter</kbd> = العدد التاني. أو مرة واحدة: <kbd>182 2</kbd>.</p></div>
+    <div class="f"><div class="fi"><svg class="ic"><use href="#s"/></svg></div><h3>بأي كلمة من الترنيمة</h3><p>اكتب أي حتة فاكرها — حتى لو من غير همزة أو فيها غلطة — وانزل بالأسهم ودوس <kbd>Enter</kbd>.</p></div>
+    <div class="f"><div class="fi"><svg class="ic"><use href="#b"/></svg></div><h3>الكتاب المقدس مشكول</h3><p>ترجمة فان دايك كاملة بالتشكيل. اكتب <kbd><bdi>يو ٣ ١٦</bdi></kbd> أو <kbd><bdi>١كو ١٣ ٤</bdi></kbd> وبعدها رقم الآية بس.</p></div>
+    <div class="f"><div class="fi"><svg class="ic"><use href="#t"/></svg></div><h3>مريح للكبار</h3><p>شرايح أبيض وأسود زي كتاب الترانيم، خطوط عربي واضحة، والكلام بيكبر لوحده ويملا الشاشة.</p></div>
+    <div class="f"><div class="fi"><svg class="ic"><use href="#m"/></svg></div><h3>شاشتين</h3><p>"على الشاشة الآن" كبيرة قدامك و"التالي" تحتها، وشاشة العرض بتفتح لوحدها على البروجكتور.</p></div>
+    <div class="f"><div class="fi"><svg class="ic"><use href="#e"/></svg></div><h3>إخفاء في ثانية</h3><p>حرف <kbd>B</kbd> — إنجليزي أو عربي — يخفي الكلام من على الشاشة ويرجعه.</p></div>
+    <div class="f"><div class="fi"><svg class="ic"><use href="#c"/></svg></div><h3>اجتماع اليوم والسجل</h3><p>كل ترنيمة وآية اتعرضت بتتسجل بتاريخ اليوم، وترجعلها في أي وقت.</p></div>
+    <div class="f"><div class="fi"><svg class="ic"><use href="#w"/></svg></div><h3>من غير إنترنت</h3><p>كل حاجة جوه البرنامج. الإنترنت بس عشان التحديثات.</p></div>
+    <div class="f"><div class="fi"><svg class="ic"><use href="#r"/></svg></div><h3>بيتحدّث لوحده</h3><p>أي تحسين جديد بيوصل لكل كنيسة لوحده من غير ما تنزّل حاجة تاني.</p></div>
+  </div>
+</div></section>
+
+<section id="screens"><div class="w">
+  <h2>شكله من جوه</h2>
+  <p class="lead">صور حقيقية من البرنامج.</p>
+  <div class="shots">
+    <figure class="shot wide"><img src="img/shot-hymns.webp" alt="الترانيم" loading="lazy"><figcaption>الترانيم — البحث بالكلام، الشرايح، و"على الشاشة الآن" و"التالي"</figcaption></figure>
+    <figure class="shot wide"><img src="img/shot-bible.webp" alt="الكتاب المقدس" loading="lazy"><figcaption>الكتاب المقدس — كل آيات الإصحاح سطور تحت بعض، تنزل بالأسهم وتعرض بـ <kbd>Enter</kbd></figcaption></figure>
+    <figure class="shot"><img src="img/shot-screen-hymn.webp" alt="شاشة العرض - ترنيمة" loading="lazy"><figcaption>شاشة العرض — ترنيمة</figcaption></figure>
+    <figure class="shot"><img src="img/shot-screen-verse.webp" alt="شاشة العرض - آية" loading="lazy"><figcaption>شاشة العرض — آية</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="keys"><div class="w">
+  <h2>الكيبورد بيعمل كل حاجة</h2>
+  <p class="lead">ومفيش داعي تحفظ — جوه البرنامج زرار "طريقة الاستخدام" بيشرحلك خطوة خطوة.</p>
+  <div class="kb">
+    <div><span>ترنيمة بالرقم</span><span><kbd>182</kbd> <kbd>Enter</kbd></span></div>
+    <div><span>عدد في نفس الترنيمة</span><span><kbd>2</kbd> <kbd>Enter</kbd></span></div>
+    <div><span>ترنيمة وعدد مرة واحدة</span><span><kbd>182</kbd> <kbd>مسافة</kbd> <kbd>2</kbd> <kbd>Enter</kbd></span></div>
+    <div><span>ترنيمة جديدة</span><span><kbd>Esc</kbd> وبعدين الرقم</span></div>
+    <div><span>آية بالاختصار</span><span><kbd><bdi>يو ٣ ١٦</bdi></kbd> <kbd>Enter</kbd></span></div>
+    <div><span>آية تانية في نفس الإصحاح</span><span><kbd>17</kbd> <kbd>Enter</kbd></span></div>
+    <div><span>تقليب الشرايح</span><span><kbd>←</kbd> <kbd>→</kbd></span></div>
+    <div><span>إخفاء الشاشة</span><span><kbd>B</kbd></span></div>
+  </div>
+</div></section>
+
+<section id="install"><div class="w">
+  <h2>التسطيب في دقيقة</h2>
+  <p class="lead">ملف واحد حوالي ١٠٠ ميجا، وبعدها مش محتاج إنترنت.</p>
+  <div class="steps">
+    <div class="step"><h3>نزّل البرنامج</h3><p>دوس "تحميل" — نسخة <bdi>Windows 10 / 11</bdi>، أو <bdi>7 / 8</bdi> لو الكمبيوتر قديم.</p></div>
+    <div class="step"><h3>شغّل الملف</h3><p>بيتسطّب لوحده ويعمل أيقونة "ترنيمات روحية" على سطح المكتب.</p></div>
+    <div class="step"><h3>وصّل البروجكتور</h3><p>شاشة العرض بتفتح عليه لوحدها، والبرنامج يفتحلك شرح سريع أول مرة.</p></div>
+  </div>
+  <div class="warn"><b>لو ظهرتلك شاشة زرقا من Windows متقلقش:</b> دوس <bdi><b>More info</b></bdi> وبعدين <bdi><b>Run anyway</b></bdi>. ده بيظهر مع أي برنامج مجاني جديد أول مرة بس. ولو برنامج الحماية وقف الملف، اختار <bdi>Allow</bdi> أو <bdi>Restore</bdi>.</div>
+</div></section>
+
+<section class="final"><div class="w">
+  <h2>جاهز للاجتماع الجاي؟</h2>
+  <p class="lead">مجاني لأي كنيسة.</p>
+  <a class="btn p dlbtn" href="https://github.com/tarnematrohiya/tarnemat-rohiya/releases/latest"><svg class="ic"><use href="#dl"/></svg>تحميل ترنيمات روحية</a>
+</div></section>
+
+<footer><div class="w">ترنيمات روحية · مجاني لخدمة الكنيسة</div></footer>
+
+<div id="reg"><form id="regf">
+  <h3>قبل التحميل</h3>
+  <p>عرّفنا بيك وبالكنيسة اللي بتخدم فيها.</p>
+  <label for="rN">الاسم</label><input id="rN" autocomplete="name">
+  <label for="rM">الكنيسة أو الاجتماع</label><input id="rM">
+  <div class="e" id="rE"></div>
+  <div class="r"><button class="btn p" type="submit">تحميل</button><button class="btn s" type="button" id="rX">إلغاء</button></div>
+  <div class="pv">البيانات دي بتوصل لخدمة البرنامج بس، ومش بتتنشر.</div>
+</form></div>
+
+<script>
+const REPO = 'tarnematrohiya/tarnemat-rohiya';
+// ---- download buttons always point to the newest installers ----
+fetch('https://api.github.com/repos/' + REPO + '/releases/latest').then(r => r.json()).then(r => {
+  const A = r.assets || [];
+  const a = A.find(x => /^Tarnemat-Rohiya-Setup-[\d.]+\.exe$/.test(x.name)), b = A.find(x => /Win7-Setup-[\d.]+\.exe$/.test(x.name));
+  if (a) document.querySelectorAll('.dlbtn:not(#dl7)').forEach(x => x.href = a.browser_download_url);
+  if (b) document.getElementById('dl7').href = b.browser_download_url; else document.getElementById('dl7').style.display = 'none';
+  if (r.tag_name) document.getElementById('ver').innerHTML = 'النسخة <bdi dir="ltr">' + r.tag_name.replace(/^v/, '') + '</bdi> · مجاني بالكامل · بيشتغل من غير إنترنت · بيتحدّث لوحده';
+}).catch(() => {});
+
+// ---- before the first download: name + church go to the service's Google Form (once per browser) ----
+const FORM = 'https://docs.google.com/forms/d/e/1FAIpQLScgRFtJ5eCo0fUfZzARgRku_cMjN99JZefadSY4yRom16MRzQ/formResponse', F_NAME = 'entry.273575873', F_CHURCH = 'entry.1147445257';
+const registered = () => { try { return localStorage.getItem('tr_reg') === '1'; } catch (e) { return false; } };
+let pending = '';
+document.querySelectorAll('.dlbtn').forEach(el => el.addEventListener('click', e => {
+  if (!FORM || registered()) return;
+  e.preventDefault(); pending = e.currentTarget.href;
+  document.getElementById('reg').classList.add('open'); document.getElementById('rN').focus();
+}));
+document.getElementById('rX').onclick = () => document.getElementById('reg').classList.remove('open');
+document.getElementById('reg').addEventListener('click', e => { if (e.target.id === 'reg') e.currentTarget.classList.remove('open'); });
+document.getElementById('regf').addEventListener('submit', async e => {
+  e.preventDefault();
+  const n = document.getElementById('rN').value.trim(), m = document.getElementById('rM').value.trim(), err = document.getElementById('rE');
+  if (n.length < 2) { err.textContent = 'اكتب اسمك'; return; }
+  if (m.length < 2) { err.textContent = 'اكتب اسم الكنيسة أو الاجتماع'; return; }
+  const fd = new FormData(); fd.append(F_NAME, n); fd.append(F_CHURCH, m);
+  try { await fetch(FORM, { method: 'POST', mode: 'no-cors', body: fd }); } catch (x) {}
+  try { localStorage.setItem('tr_reg', '1'); } catch (x) {}
+  document.getElementById('reg').classList.remove('open'); location.href = pending;
+});
+
+// ---- the demo: a small copy of the app that plays by itself ----
+const wrap = document.getElementById('wrap'), stage = document.getElementById('stage');
+function fit() { stage.style.transform = `scale(${wrap.clientWidth / 960})`; }
+addEventListener('resize', fit); fit();
+const $ = id => document.getElementById(id), wait = ms => new Promise(r => setTimeout(r, ms));
+const H182 = [['1', ['بِاسْمِكَ يَا رَبُّ تَجْمَعُنَا', 'حَوْلَ شَخْصِكَ بِالْحُبِّ النَّقِيّ', 'هَكَذَا نَفْرَحُ مَعًا هُنَا', 'نُذِيعُ مَوْتَكَ حَتَّى تَجِي']], ['2', ['حَوْلَكَ يَا رَبُّ كَنِيسَتُكْ', 'تَسْجُدُ حَتَّى اللِّقَاءِ الْقَرِيبْ', 'نَأْكُلُ الْخُبْزَ وَنَشْرَبُ الْكَأْسْ', 'كَيْ نَذْكُرَ حُبَّكَ يَا حَبِيبْ']], ['3', ['فِي حُضُورِكَ الْقَلْبُ يَفْرَحُ', 'وَنَسْجُدُ بِحُرِّيَّةِ الرُّوحْ', 'وَحَوْلَكَ نَحْنُ نُسَبِّحُ', 'لَكَ أَيُّهَا الْخَرُوفُ الْمَذْبُوحْ']]];
+const H285 = [['1', ['أَنْتَ لِي الْمَنُّ الَّذِي يُشْبِعُ قَلْبِي', 'لا يَجُوعُ الْقَلْبُ حَاشَا', 'حُبُّكَ النَّهْرُ الَّذِي يُرْوِينِي رَبِّي', 'نَفْسِي لا تَحْتَارُ عَطْشَى']], ['ق', ['فِيكَ مَا أَرْجُو وَأَكْثَرْ', 'أَنْتَ لِلنُّعْمَاءِ مَصْدَرْ', 'أَنْتَ لِلنُّعْمَاءِ مَصْدَرْ']], ['2', ['أَنْتَ لِي الرَّاعِي الَّذِي يَرْعَى وُجُودِي', 'لا يَخَافُ الْقَلْبُ وَحْشَا', 'أَنْتَ لِي الْحِصْنُ وَفِيكَ كُلُّ جُودِ', 'مِنْ عِدَايَ لَسْتُ أَخْشَى']]];
+const JN = ['فِي الْبَدْءِ كَانَ الْكَلِمَةُ…', 'هَذَا كَانَ فِي الْبَدْءِ عِنْدَ اللهِ…', 'أَجَابَ يَسُوعُ وَقَالَ لَهُ: «الْحَقَّ الْحَقَّ…', 'قَالَ لَهُ نِيقُودِيمُوسُ: «كَيْفَ يُمْكِنُ…', 'أَجَابَ يَسُوعُ: «الْحَقَّ الْحَقَّ أَقُولُ لَكَ…', 'اَلْمَوْلُودُ مِنَ الْجَسَدِ جَسَدٌ هُوَ…'];
+const V16 = 'لِأَنَّهُ هَكَذَا أَحَبَّ اللهُ الْعَالَمَ حَتَّى بَذَلَ ابْنَهُ الْوَحِيدَ، لِكَيْ لَا يَهْلِكَ كُلُّ مَنْ يُؤْمِنُ بِهِ، بَلْ تَكُونُ لَهُ الْحَيَاةُ الْأَبَدِيَّةُ.';
+const V17 = 'لِأَنَّهُ لَمْ يُرْسِلِ اللهُ ابْنَهُ إِلَى الْعَالَمِ لِيَدِينَ الْعَالَمَ، بَلْ لِيَخْلُصَ بِهِ الْعَالَمُ.';
+const ar = n => String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+const lab = l => l === 'ق' ? 'القرار' : 'العدد ' + l;
+let cur = null;
+function cap(t, s) { $('cap').innerHTML = t + (s ? '<small>' + s + '</small>' : ''); }
+function keys(arr) { $('dkeys').innerHTML = arr.map(k => '<span>' + k + '</span>').join(''); }
+function list(items, k) { $('dres').innerHTML = items.map((x, i) => `<div class="it${i === k ? ' k' : ''}">${x[0] !== '' ? '<em>' + x[0] + '</em>' : ''}<div>${x[1]}${x[2] ? '<small>' + x[2] + '</small>' : ''}</div></div>`).join(''); }
+function hymn(n, title, H, live) {
+  cur = { n, H };
+  $('dttl').innerHTML = `ترنيمة ${n}<small>${title}</small>`;
+  $('dslides').className = 'sl';
+  $('dslides').innerHTML = H.map((s, i) => `<div class="s ${i % 2 ? 'k' : 'w'}${i === live ? ' live' : ''}${i === live + 1 ? ' cue' : ''}"><span class="lb">${lab(s[0])}</span>${s[1].slice(0, 3).join('<br>')}</div>`).join('');
+  show(H[live][1].join('<br>'), i => i % 2, live, `ترنيمة ${n} · ${lab(H[live][0])}`);
+  const nx = H[live + 1]; $('dcue').className = 'scr sm' + ((live + 1) % 2 ? '' : ' w'); $('dcue').innerHTML = nx ? nx[1].join('<br>') : ''; $('dcr').textContent = nx ? `ترنيمة ${n} · ${lab(nx[0])}` : '';
+}
+function show(html, dark, i, ref) {
+  const w = typeof dark === 'function' ? !dark(i) : !dark;
+  $('dlive').className = 'scr' + (w ? ' w' : ''); $('dlive').innerHTML = html; $('dlr').textContent = ref;
+  $('dproj').className = 'proj' + (w ? ' w' : ''); $('dproj').innerHTML = html.replace(/<br>/g, ' ').length > 120 ? html : html;
+}
+function chapter(live) {
+  $('dttl').innerHTML = 'يوحنا<small>الإصحاح ٣</small>';
+  $('dslides').className = 'vl';
+  const rows = JN.map((t, i) => [i + 1, t]).concat([[16, V16], [17, V17], [18, 'اَلَّذِي يُؤْمِنُ بِهِ لَا يُدَانُ…']]);
+  $('dslides').innerHTML = rows.map(r => `<div class="v${r[0] === live ? ' live' : ''}${r[0] === live + 1 ? ' cue' : ''}"><i>آية ${ar(r[0])}</i>${r[1]}</div>`).join('');
+  const t = live === 16 ? V16 : V17;
+  show(t + `<span class="r">يوحنا ٣: ${ar(live)}</span>`, true, 0, 'يوحنا ٣: ' + ar(live));
+  $('dcue').className = 'scr sm'; $('dcue').innerHTML = live === 16 ? V17 : 'اَلَّذِي يُؤْمِنُ بِهِ لَا يُدَانُ…'; $('dcr').textContent = 'يوحنا ٣: ' + ar(live + 1);
+}
+async function type(t, ms = 110) { $('dq').classList.add('f'); for (let i = 1; i <= t.length; i++) { $('dqt').textContent = t.slice(0, i); await wait(ms); } }
+async function press(arr, gap = 380) { const shown = []; for (const k of arr) { shown.push(k); keys(shown); await wait(gap); } }
+function tab(b) { $('tH').classList.toggle('on', !b); $('tB').classList.toggle('on', b); }
+async function loop() {
+  for (;;) {
+    // 1) number
+    tab(false); $('dqt').textContent = ''; $('dq').classList.remove('f'); keys([]);
+    list([['181', 'بِاسْمِ يَسُوعَ نَجْتَمِعُ'], ['182', 'بِاسْمِكَ يَا رَبُّ تَجْمَعُنَا'], ['183', 'يا رب ما احلى الحياة قربك'], ['184', 'نحن نسجد لك يا ربنا'], ['185', 'باسمك يا رب ندعو']]);
+    hymn(109, 'يا مخلصي اصحبني', [['1', ['يَا مُخَلِّصِي اصْحَبَنِّي', 'كُنْ لِي دَوْمًا مُرْشِدًا']], ['ق', ['لَسْتُ مِنْ شَرٍّ أَخَافُ', 'فَاهْدِنِي حَيْثُ تُرِيدْ']]], 0);
+    cap('ترنيمة بالرقم', 'اكتب رقم الترنيمة ودوس Enter — تظهر على البروجكتور على طول');
+    await wait(1400); await press(['1', '8', '2', 'Enter']); hymn(182, 'بِاسْمِكَ يَا رَبُّ تَجْمَعُنَا', H182, 0); list([['182', 'بِاسْمِكَ يَا رَبُّ تَجْمَعُنَا']], 0);
+    await wait(2200);
+    cap('وبعدها رقم العدد بس', 'طول ما الترنيمة مفتوحة: 2 Enter = العدد التاني'); keys([]);
+    await wait(900); await press(['2', 'Enter']); hymn(182, 'بِاسْمِكَ يَا رَبُّ تَجْمَعُنَا', H182, 1);
+    await wait(2600);
+    // 2) words
+    cap('أو بأي كلمة من الترنيمة', 'حتى من غير همزة أو بغلطة — وتنزل بالأسهم وتدوس Enter'); keys([]);
+    await wait(700); await type('انت لي المن');
+    list([['285', 'أَنْتَ لِي الْمَنُّ الَّذِي يُشْبِعُ قَلْبِي', 'العدد ١: أنت لي المن الذي يشبع قلبي'], ['109', 'يا مخلصي اصحبني', 'العدد ٣: الخطوب الا انت يا حبيبي ترثي لي'], ['363', 'صوته الحلو اتاني', 'العدد ٣: ربي لي فرح وعزا من كل دا لي دوا'], ['362', 'انت ليك قصد في حياتي', 'العدد ٢: منك انت الحكمة نازلة']]);
+    await wait(900); await press(['↓'], 300); list([['285', 'أَنْتَ لِي الْمَنُّ الَّذِي يُشْبِعُ قَلْبِي', 'العدد ١: أنت لي المن الذي يشبع قلبي'], ['109', 'يا مخلصي اصحبني', 'العدد ٣: الخطوب الا انت يا حبيبي ترثي لي'], ['363', 'صوته الحلو اتاني', 'العدد ٣: ربي لي فرح وعزا من كل دا لي دوا'], ['362', 'انت ليك قصد في حياتي', 'العدد ٢: منك انت الحكمة نازلة']], 0);
+    await wait(500); await press(['↓', 'Enter'], 420); hymn(285, 'أَنْتَ لِي الْمَنُّ الَّذِي يُشْبِعُ قَلْبِي', H285, 0); $('dq').classList.remove('f');
+    await wait(2600);
+    // 3) Bible
+    tab(true); keys([]); $('dqt').textContent = ''; list([]);
+    cap('الكتاب المقدس باختصار الشاهد', 'يو ٣ ١٦ + Enter — فان دايك بالتشكيل');
+    await wait(600); await type('يو ٣ ١٦', 160); list([['', 'يوحنا ٣: ١٦', 'لأنه هكذا أحب الله العالم…']], 0);
+    await wait(600); await press(['Enter']); chapter(16); $('dq').classList.remove('f'); $('dqt').textContent = '';
+    await wait(2600);
+    cap('وبعدها رقم الآية بس', '17 Enter = الآية اللي بعدها في نفس الإصحاح'); keys([]);
+    await wait(700); await press(['1', '7', 'Enter']); chapter(17);
+    await wait(2400);
+    // 4) B
+    cap('حرف B يخفي الشاشة', 'سواء الكيبورد إنجليزي أو عربي — ودوسة تانية ترجّع الكلام'); keys([]);
+    await wait(900); await press(['B']); $('dB').classList.add('on'); const keep = $('dproj').innerHTML; $('dproj').className = 'proj'; $('dproj').innerHTML = '';
+    await wait(1800); keys([]); await press(['B']); $('dB').classList.remove('on'); $('dproj').innerHTML = keep;
+    await wait(2200);
+  }
+}
+loop();
+</script>
+</body>
+</html>
