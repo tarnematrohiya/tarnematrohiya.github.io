@@ -42,27 +42,27 @@ nav .btn{padding:8px 18px;font-size:15px}
 .ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 
 /* hero */
-.hero{position:relative;padding:64px 0 30px;text-align:center;overflow:hidden}
+.hero{position:relative;padding:40px 0 10px;text-align:center;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:-200px -20% auto;height:640px;background:radial-gradient(closest-side,#3b82f633,transparent 70%);pointer-events:none}
-.hero .logo{width:92px;height:92px;border-radius:24px;box-shadow:0 18px 50px #0008}
-.hero h1{font-size:54px;line-height:1.2;margin:18px 0 6px;font-weight:900;letter-spacing:-.5px}
-.hero .sub{font-size:21px;color:#c9ced5;max-width:720px;margin:0 auto}
+.hero .logo{width:64px;height:64px;border-radius:17px;box-shadow:0 18px 50px #0008}
+.hero h1{font-size:42px;line-height:1.2;margin:12px 0 4px;font-weight:900;letter-spacing:-.5px}
+.hero .sub{font-size:18px;color:#c9ced5;max-width:640px;margin:0 auto}
 .hero .sub b{color:#fff}
-.cta{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:28px}
+.cta{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:20px}
 .cta .row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 .ver{font-size:14px;color:var(--mut)}
 .pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:24px auto 0;max-width:820px}
 .pills span{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:14px;font-weight:700;color:#d4d8de}
 
 /* demo */
-.demo{margin:34px auto 0;max-width:1060px}
+.demo{margin:28px auto 0;max-width:920px}
 .frame{border-radius:18px;border:1px solid #ffffff14;background:#0b0c0e;padding:10px;box-shadow:0 40px 90px #000c,0 0 0 1px #000}
 .dots{display:flex;gap:6px;padding:2px 6px 10px}.dots i{width:11px;height:11px;border-radius:50%;background:#3a3d43}
 .dots i:nth-child(1){background:#ff5f57}.dots i:nth-child(2){background:#febc2e}.dots i:nth-child(3){background:#28c840}
 #wrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:10px;background:var(--bg2)}
 #stage{position:absolute;top:0;right:0;width:960px;height:540px;transform-origin:top right;font-size:13px}
-.cap{min-height:58px;margin-top:16px;font-size:19px;font-weight:700;color:#dfe3e8}
-.cap small{display:block;color:var(--mut);font-size:15px;font-weight:600}
+.cap{min-height:54px;margin-top:12px;font-size:17px;font-weight:700;color:#dfe3e8}
+.cap small{display:block;color:var(--mut);font-size:14px;font-weight:600}
 
 /* the little app inside the demo */
 .a{position:absolute;inset:0;display:grid;grid-template-rows:42px 1fr;background:var(--bg2)}
@@ -86,57 +86,53 @@ nav .btn{padding:8px 18px;font-size:15px}
 .a .mid{padding:10px 12px;display:flex;flex-direction:column;gap:8px;min-height:0;min-width:0;overflow:hidden;border-left:1px solid var(--line)}
 .a .ttl{font-weight:800;font-size:13px}.a .ttl small{color:var(--mut);font-weight:600;margin-right:6px}
 .a .sl{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.a .s{border-radius:10px;padding:18px 8px 8px;font-size:10.5px;line-height:1.8;text-align:center;font-weight:700;border:2px solid transparent;position:relative;min-height:96px}
+.a .s{border-radius:10px;padding:16px 8px 8px;font-size:8.5px;line-height:1.75;text-align:center;font-weight:700;border:2px solid transparent;position:relative;min-height:96px}
 .a .s.w{background:#fff;color:#000}.a .s.k{background:#000;color:#fff}
 .a .s .lb{position:absolute;top:4px;right:6px;font-size:9px;background:#0002;border-radius:4px;padding:0 5px}.a .s.k .lb{background:#fff2}
 .a .s.cue{border-color:var(--acc)}.a .s.live{border-color:var(--live)}
 .a .vl{display:flex;flex-direction:column;gap:3px}
-.a .v{background:#000;color:#fff;border:1.5px solid transparent;border-radius:6px;padding:4px 34px 4px 8px;font-size:10.5px;position:relative;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.a .v{background:#000;color:#fff;border:1.5px solid transparent;border-radius:6px;padding:4px 34px 4px 8px;font-size:9.5px;position:relative;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .a .v i{position:absolute;right:6px;font-style:normal;font-size:9px;color:#aaa}.a .v.cue{border-color:var(--acc)}.a .v.live{border-color:var(--live)}
 .a .rt{padding:10px 12px;display:flex;flex-direction:column;gap:6px}
 .a .lbl{display:flex;justify-content:space-between;font-weight:800;font-size:11px}.a .lbl small{color:var(--mut);font-weight:600}
 .a .lbl .d{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--live);margin-left:5px}
-.a .scr{aspect-ratio:16/9;border-radius:9px;border:3px solid var(--live);display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:11.5px;line-height:1.9;padding:8px;background:#000;color:#fff;transition:background .15s}
-.a .scr.w{background:#fff;color:#000}.a .scr.sm{width:62%;align-self:center;border-color:var(--acc);font-size:8px;border-width:2px}
+.a .scr{width:100%;aspect-ratio:16/9;border-radius:9px;border:3px solid var(--live);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:8.5px;line-height:1.85;padding:8px 14px;background:#000;color:#fff;transition:background .15s}
+.a .scr.w{background:#fff;color:#000}.a .scr.sm{width:62%;align-self:center;border-color:var(--acc);font-size:6px;border-width:2px}
 .a .ctl{display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:5px}.a .ctl span{background:var(--card);border:1px solid var(--line);border-radius:8px;text-align:center;font-weight:800;font-size:11px;padding:6px 0}.a .ctl span.g{background:var(--live);border-color:var(--live)}
 /* projector + keys overlay */
-.proj{position:absolute;left:345px;bottom:22px;width:260px;aspect-ratio:16/9;background:#000;border-radius:8px;border:2px solid #444;box-shadow:0 14px 40px #000c;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:12px;line-height:1.9;padding:10px;color:#fff;transition:background .15s}
-.a .scr .r{display:block;font-size:8.5px;color:#999;font-weight:600}.proj.w{background:#fff;color:#000}.proj .r{display:block;font-size:9px;color:#999;font-weight:600}
+.proj{position:absolute;left:345px;bottom:22px;width:260px;aspect-ratio:16/9;background:#000;border-radius:8px;border:2px solid #444;box-shadow:0 14px 40px #000c;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:9px;line-height:1.85;padding:10px 18px;color:#fff;transition:background .15s}
+.a .scr .r{display:block;font-size:6.5px;color:#999;font-weight:600;margin-top:4px}.proj.w{background:#fff;color:#000}.proj .r{display:block;font-size:7px;color:#999;font-weight:600;margin-top:5px}
 .proj::after{content:"البروجكتور";position:absolute;top:-22px;right:4px;font-size:11px;color:#bbb;font-weight:700}
 .keys{position:absolute;right:22px;bottom:26px;display:flex;gap:6px;direction:ltr;pointer-events:none}
 .keys span{background:#f4f4f5;color:#111;border-radius:9px;padding:5px 12px;font-weight:900;font-size:17px;box-shadow:0 4px 0 #b5b5b9,0 10px 24px #0008;animation:pop .2s}
 @keyframes pop{from{transform:translateY(8px);opacity:0}}
 
 /* sections */
-section{padding:80px 0 10px}
-h2{font-size:36px;line-height:1.3;margin:0 0 8px;text-align:center;font-weight:900}
-.lead{text-align:center;color:var(--mut);font-size:18px;max-width:680px;margin:0 auto 34px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.f{background:linear-gradient(180deg,#1d1f23,#18191c);border:1px solid var(--line);border-radius:18px;padding:22px}
-.f .fi{width:42px;height:42px;border-radius:12px;background:#3b82f61f;color:#7fb0ff;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
-.f h3{margin:0 0 4px;font-size:19px}.f p{margin:0;color:#b5bac1;font-size:15.5px}
-.shots{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.shot{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+section{padding:56px 0 0}
+h2{font-size:28px;line-height:1.3;margin:0 0 22px;text-align:center;font-weight:900}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.f{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.f .hd{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.f .fi{width:32px;height:32px;flex:none;border-radius:9px;background:#3b82f61f;color:#7fb0ff;display:flex;align-items:center;justify-content:center}.f .fi .ic{width:17px;height:17px}
+.f h3{margin:0;font-size:16.5px}.f p{margin:0;color:#b5bac1;font-size:14.5px;line-height:1.75}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.shot{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .shot img{display:block;width:100%;height:auto}
-.shot figcaption{padding:12px 16px;font-weight:700;color:#cfd3d9;font-size:15.5px}
-.shot.wide{grid-column:1/-1}
-.kb{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:900px;margin:0 auto}
-.kb div{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-weight:700}
-.kb div span:first-child{color:#cfd3d9}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
-.step{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;position:relative}
-.step::before{counter-increment:s;content:counter(s);position:absolute;top:-14px;right:20px;width:32px;height:32px;border-radius:50%;background:var(--acc);display:flex;align-items:center;justify-content:center;font-weight:900}
-.step h3{margin:6px 0 4px}.step p{margin:0;color:#b5bac1}
-.warn{margin-top:18px;background:#2a2315;border:1px solid #5c4a1e;border-radius:16px;padding:16px 20px;color:#f1e3c0}
+.shot figcaption{padding:8px 14px;font-weight:700;color:#cfd3d9;font-size:14px}
+.inst{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;counter-reset:s}
+.inst div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:#cfd3d9}
+.inst div::before{counter-increment:s;content:counter(s);flex:none;width:26px;height:26px;border-radius:50%;background:var(--acc);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px}
+.inst b{color:#fff;display:block}
+.warn{margin-top:12px;background:#2a2315;border:1px solid #5c4a1e;border-radius:12px;padding:10px 16px;color:#f1e3c0;font-size:14px}
 .warn b{color:#ffd88a}
-.final{text-align:center;padding:90px 0 70px}
-footer{border-top:1px solid var(--line);padding:22px 0;color:var(--mut);font-size:14px;text-align:center}
+.final{text-align:center;padding:50px 0 44px}
+footer{border-top:1px solid var(--line);padding:18px 0;color:var(--mut);font-size:13px;text-align:center}
 
 /* download form */
 #reg{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
 #reg.open{display:flex}
 #reg form{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px;width:100%;max-width:420px;text-align:right}
-#reg h3{margin:0 0 2px;font-size:22px}#reg p{margin:0 0 14px;color:var(--mut)}
+#reg h3{margin:0 0 8px;font-size:22px}#reg p{margin:0 0 14px;color:var(--mut)}
 #reg label{display:block;font-weight:700;margin:10px 0 4px}
 #reg input{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:11px 14px;color:var(--txt);font-family:C;font-size:16px;outline:none}
 #reg input:focus{border-color:var(--acc)}
@@ -145,15 +141,15 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--mut);font-siz
 #reg .pv{font-size:12.5px;color:var(--mut);margin-top:10px}
 
 @media (max-width:860px){
-  .hero h1{font-size:38px}.hero .sub{font-size:18px}
-  .grid,.steps{grid-template-columns:1fr}.shots{grid-template-columns:1fr}.kb{grid-template-columns:1fr}
-  nav a.l{display:none} h2{font-size:28px}
+  .hero h1{font-size:34px}.hero .sub{font-size:16px}
+  .how,.inst,.shots{grid-template-columns:1fr}
+  nav a.l{display:none} h2{font-size:24px}
 }
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute"><defs>
- <symbol id="dl" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></symbol>
+ <symbol id="idl" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></symbol>
  <symbol id="win" viewBox="0 0 24 24"><path d="M3 5.5 10.5 4.5v7H3zM12.5 4.2 21 3v8.5h-8.5zM3 12.5h7.5v7L3 18.5zM12.5 12.5H21V21l-8.5-1.2z" fill="currentColor" stroke="none"/></symbol>
  <symbol id="k" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></symbol>
  <symbol id="s" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
@@ -170,11 +166,10 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--mut);font-siz
 <nav><div class="w">
   <a class="brand" href="#"><img src="icon.png" alt=""><span>ترنيمات روحية</span></a>
   <span class="sp"></span>
-  <a class="l" href="#features">المميزات</a>
+  <a class="l" href="#how">إزاي بيشتغل</a>
   <a class="l" href="#screens">الشاشات</a>
-  <a class="l" href="#keys">الاختصارات</a>
   <a class="l" href="#install">التسطيب</a>
-  <a class="btn p dlbtn" href="https://github.com/tarnematrohiya/tarnemat-rohiya/releases/latest"><svg class="ic"><use href="#dl"/></svg>تحميل</a>
+  <a class="btn p dlbtn" href="https://github.com/tarnematrohiya/tarnemat-rohiya/releases/latest"><svg class="ic"><use href="#idl"/></svg>تحميل</a>
 </div></nav>
 
 <header class="hero"><div class="w">
@@ -186,7 +181,6 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--mut);font-siz
     <a class="btn s sm dlbtn" id="dl7" href="https://github.com/tarnematrohiya/tarnemat-rohiya/releases/latest">نسخة <bdi>Windows 7 / 8</bdi></a>
     <span class="ver" id="ver">مجاني بالكامل · بيشتغل من غير إنترنت · بيتحدّث لوحده</span>
   </div>
-  <div class="pills"><span>٣٧٥ ترنيمة من كتاب الترانيم الروحية</span><span>الكتاب المقدس فان دايك مشكول</span><span>بحث حتى لو فيه غلطة</span><span>شاشة عرض أبيض وأسود مريحة</span><span>من غير إنترنت</span></div>
 
   <div class="demo">
     <div class="frame"><div class="dots"><i></i><i></i><i></i></div>
@@ -217,72 +211,46 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--mut);font-siz
   </div>
 </div></header>
 
-<section id="features"><div class="w">
-  <h2>كل اللي محتاجه في الاجتماع</h2>
-  <p class="lead">اتعمل علشان اللي قاعد على الكمبيوتر يلحق الترنيمة والآية في لحظتها، والناس تقرا براحة.</p>
-  <div class="grid">
-    <div class="f"><div class="fi"><svg class="ic"><use href="#k"/></svg></div><h3>بالرقم على طول</h3><p><kbd>182</kbd> <kbd>Enter</kbd> تظهر الترنيمة. بعدها <kbd>2</kbd> <kbd>Enter</kbd> = العدد التاني. أو مرة واحدة: <kbd>182 2</kbd>.</p></div>
-    <div class="f"><div class="fi"><svg class="ic"><use href="#s"/></svg></div><h3>بأي كلمة من الترنيمة</h3><p>اكتب أي حتة فاكرها — حتى لو من غير همزة أو فيها غلطة — وانزل بالأسهم ودوس <kbd>Enter</kbd>.</p></div>
-    <div class="f"><div class="fi"><svg class="ic"><use href="#b"/></svg></div><h3>الكتاب المقدس مشكول</h3><p>ترجمة فان دايك كاملة بالتشكيل. اكتب <kbd><bdi>يو ٣ ١٦</bdi></kbd> أو <kbd><bdi>١كو ١٣ ٤</bdi></kbd> وبعدها رقم الآية بس.</p></div>
-    <div class="f"><div class="fi"><svg class="ic"><use href="#t"/></svg></div><h3>مريح للكبار</h3><p>شرايح أبيض وأسود زي كتاب الترانيم، خطوط عربي واضحة، والكلام بيكبر لوحده ويملا الشاشة.</p></div>
-    <div class="f"><div class="fi"><svg class="ic"><use href="#m"/></svg></div><h3>شاشتين</h3><p>"على الشاشة الآن" كبيرة قدامك و"التالي" تحتها، وشاشة العرض بتفتح لوحدها على البروجكتور.</p></div>
-    <div class="f"><div class="fi"><svg class="ic"><use href="#e"/></svg></div><h3>إخفاء في ثانية</h3><p>حرف <kbd>B</kbd> — إنجليزي أو عربي — يخفي الكلام من على الشاشة ويرجعه.</p></div>
-    <div class="f"><div class="fi"><svg class="ic"><use href="#c"/></svg></div><h3>اجتماع اليوم والسجل</h3><p>كل ترنيمة وآية اتعرضت بتتسجل بتاريخ اليوم، وترجعلها في أي وقت.</p></div>
-    <div class="f"><div class="fi"><svg class="ic"><use href="#w"/></svg></div><h3>من غير إنترنت</h3><p>كل حاجة جوه البرنامج. الإنترنت بس عشان التحديثات.</p></div>
-    <div class="f"><div class="fi"><svg class="ic"><use href="#r"/></svg></div><h3>بيتحدّث لوحده</h3><p>أي تحسين جديد بيوصل لكل كنيسة لوحده من غير ما تنزّل حاجة تاني.</p></div>
+<section id="how"><div class="w">
+  <h2>إزاي بيشتغل</h2>
+  <div class="how">
+    <div class="f"><div class="hd"><div class="fi"><svg class="ic"><use href="#k"/></svg></div><h3>ترنيمة بالرقم</h3></div><p><kbd>182</kbd> <kbd>Enter</kbd> — وبعدها <kbd>2</kbd> <kbd>Enter</kbd> للعدد التاني، أو مرة واحدة <kbd><bdi dir="ltr">182 2</bdi></kbd>. ترنيمة جديدة: <kbd>Esc</kbd>.</p></div>
+    <div class="f"><div class="hd"><div class="fi"><svg class="ic"><use href="#s"/></svg></div><h3>بأي كلمة</h3></div><p>اكتب أي حتة من الترنيمة حتى لو فيها غلطة، وانزل بالأسهم و<kbd>Enter</kbd>.</p></div>
+    <div class="f"><div class="hd"><div class="fi"><svg class="ic"><use href="#b"/></svg></div><h3>الكتاب المقدس</h3></div><p>فان دايك مشكول. <kbd><bdi>يو ٣ ١٦</bdi></kbd> <kbd>Enter</kbd>، وبعدها رقم الآية بس.</p></div>
+    <div class="f"><div class="hd"><div class="fi"><svg class="ic"><use href="#m"/></svg></div><h3>الشاشة الآن والتالي</h3></div><p>بتشوف المعروض واللي بعده، وبتقلّب بالأسهم <span style="white-space:nowrap"><kbd>←</kbd> <kbd>→</kbd></span></p></div>
+    <div class="f"><div class="hd"><div class="fi"><svg class="ic"><use href="#e"/></svg></div><h3>إخفاء الشاشة</h3></div><p>حرف <kbd>B</kbd> بالإنجليزي أو العربي يخفي الكلام ويرجعه.</p></div>
+    <div class="f"><div class="hd"><div class="fi"><svg class="ic"><use href="#w"/></svg></div><h3>من غير إنترنت</h3></div><p>٣٧٥ ترنيمة والكتاب المقدس جوه البرنامج، وبيتحدّث لوحده لما يلاقي نت.</p></div>
   </div>
 </div></section>
 
 <section id="screens"><div class="w">
-  <h2>شكله من جوه</h2>
-  <p class="lead">صور حقيقية من البرنامج.</p>
+  <h2>صور من البرنامج</h2>
   <div class="shots">
-    <figure class="shot wide"><img src="img/shot-hymns.webp" alt="الترانيم" loading="lazy"><figcaption>الترانيم — البحث بالكلام، الشرايح، و"على الشاشة الآن" و"التالي"</figcaption></figure>
-    <figure class="shot wide"><img src="img/shot-bible.webp" alt="الكتاب المقدس" loading="lazy"><figcaption>الكتاب المقدس — كل آيات الإصحاح سطور تحت بعض، تنزل بالأسهم وتعرض بـ <kbd>Enter</kbd></figcaption></figure>
-    <figure class="shot"><img src="img/shot-screen-hymn.webp" alt="شاشة العرض - ترنيمة" loading="lazy"><figcaption>شاشة العرض — ترنيمة</figcaption></figure>
-    <figure class="shot"><img src="img/shot-screen-verse.webp" alt="شاشة العرض - آية" loading="lazy"><figcaption>شاشة العرض — آية</figcaption></figure>
-  </div>
-</div></section>
-
-<section id="keys"><div class="w">
-  <h2>الكيبورد بيعمل كل حاجة</h2>
-  <p class="lead">ومفيش داعي تحفظ — جوه البرنامج زرار "طريقة الاستخدام" بيشرحلك خطوة خطوة.</p>
-  <div class="kb">
-    <div><span>ترنيمة بالرقم</span><span><kbd>182</kbd> <kbd>Enter</kbd></span></div>
-    <div><span>عدد في نفس الترنيمة</span><span><kbd>2</kbd> <kbd>Enter</kbd></span></div>
-    <div><span>ترنيمة وعدد مرة واحدة</span><span><kbd>182</kbd> <kbd>مسافة</kbd> <kbd>2</kbd> <kbd>Enter</kbd></span></div>
-    <div><span>ترنيمة جديدة</span><span><kbd>Esc</kbd> وبعدين الرقم</span></div>
-    <div><span>آية بالاختصار</span><span><kbd><bdi>يو ٣ ١٦</bdi></kbd> <kbd>Enter</kbd></span></div>
-    <div><span>آية تانية في نفس الإصحاح</span><span><kbd>17</kbd> <kbd>Enter</kbd></span></div>
-    <div><span>تقليب الشرايح</span><span><kbd>←</kbd> <kbd>→</kbd></span></div>
-    <div><span>إخفاء الشاشة</span><span><kbd>B</kbd></span></div>
+    <figure class="shot"><img src="img/shot-hymns.webp" alt="الترانيم" loading="lazy"><figcaption>الترانيم</figcaption></figure>
+    <figure class="shot"><img src="img/shot-bible.webp" alt="الكتاب المقدس" loading="lazy"><figcaption>الكتاب المقدس</figcaption></figure>
   </div>
 </div></section>
 
 <section id="install"><div class="w">
-  <h2>التسطيب في دقيقة</h2>
-  <p class="lead">ملف واحد حوالي ١٠٠ ميجا، وبعدها مش محتاج إنترنت.</p>
-  <div class="steps">
-    <div class="step"><h3>نزّل البرنامج</h3><p>دوس "تحميل" — نسخة <bdi>Windows 10 / 11</bdi>، أو <bdi>7 / 8</bdi> لو الكمبيوتر قديم.</p></div>
-    <div class="step"><h3>شغّل الملف</h3><p>بيتسطّب لوحده ويعمل أيقونة "ترنيمات روحية" على سطح المكتب.</p></div>
-    <div class="step"><h3>وصّل البروجكتور</h3><p>شاشة العرض بتفتح عليه لوحدها، والبرنامج يفتحلك شرح سريع أول مرة.</p></div>
+  <h2>التسطيب</h2>
+  <div class="inst">
+    <div><span><b>نزّل البرنامج</b>نسخة <bdi>Windows 10 / 11</bdi>، أو <bdi>7 / 8</bdi> للكمبيوتر القديم.</span></div>
+    <div><span><b>شغّل الملف</b>بيتسطّب لوحده ويعمل أيقونة على سطح المكتب.</span></div>
+    <div><span><b>وصّل البروجكتور</b>وزرار "طريقة الاستخدام" بيشرحلك كل حاجة.</span></div>
   </div>
-  <div class="warn"><b>لو ظهرتلك شاشة زرقا من Windows متقلقش:</b> دوس <bdi><b>More info</b></bdi> وبعدين <bdi><b>Run anyway</b></bdi>. ده بيظهر مع أي برنامج مجاني جديد أول مرة بس. ولو برنامج الحماية وقف الملف، اختار <bdi>Allow</bdi> أو <bdi>Restore</bdi>.</div>
+  <div class="warn"><b>لو ظهرت شاشة زرقا من Windows:</b> دوس <bdi><b>More info</b></bdi> وبعدين <bdi><b>Run anyway</b></bdi> — بتظهر أول مرة بس.</div>
 </div></section>
 
 <section class="final"><div class="w">
-  <h2>جاهز للاجتماع الجاي؟</h2>
-  <p class="lead">مجاني لأي كنيسة.</p>
-  <a class="btn p dlbtn" href="https://github.com/tarnematrohiya/tarnemat-rohiya/releases/latest"><svg class="ic"><use href="#dl"/></svg>تحميل ترنيمات روحية</a>
+  <a class="btn p dlbtn" href="https://github.com/tarnematrohiya/tarnemat-rohiya/releases/latest"><svg class="ic"><use href="#idl"/></svg>تحميل ترنيمات روحية — مجاني</a>
 </div></section>
 
 <footer><div class="w">ترنيمات روحية · مجاني لخدمة الكنيسة</div></footer>
 
 <div id="reg"><form id="regf">
-  <h3>قبل التحميل</h3>
-  <p>عرّفنا بيك وبالكنيسة اللي بتخدم فيها.</p>
+  <h3>عرّفنا بيك وبكنيستك</h3>
   <label for="rN">الاسم</label><input id="rN" autocomplete="name">
-  <label for="rM">الكنيسة أو الاجتماع</label><input id="rM">
+  <label for="rM">الكنيسة</label><input id="rM">
   <div class="e" id="rE"></div>
   <div class="r"><button class="btn p" type="submit">تحميل</button><button class="btn s" type="button" id="rX">إلغاء</button></div>
   <div class="pv">البيانات دي بتوصل لخدمة البرنامج بس، ومش بتتنشر.</div>
@@ -314,7 +282,7 @@ document.getElementById('regf').addEventListener('submit', async e => {
   e.preventDefault();
   const n = document.getElementById('rN').value.trim(), m = document.getElementById('rM').value.trim(), err = document.getElementById('rE');
   if (n.length < 2) { err.textContent = 'اكتب اسمك'; return; }
-  if (m.length < 2) { err.textContent = 'اكتب اسم الكنيسة أو الاجتماع'; return; }
+  if (m.length < 2) { err.textContent = 'اكتب اسم الكنيسة'; return; }
   const fd = new FormData(); fd.append(F_NAME, n); fd.append(F_CHURCH, m);
   try { await fetch(FORM, { method: 'POST', mode: 'no-cors', body: fd }); } catch (x) {}
   try { localStorage.setItem('tr_reg', '1'); } catch (x) {}
