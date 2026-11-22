@@ -51,6 +51,8 @@ nav .btn{padding:8px 18px;font-size:15px}
 .cta{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:20px}
 .cta .row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 .ver{font-size:14px;color:var(--mut)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px auto 0;max-width:820px}
+.pills span{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:14px;font-weight:700;color:#d4d8de}
 .pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:24px auto 0;max-width:820px}
 .pills span{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:14px;font-weight:700;color:#d4d8de}
 
@@ -60,52 +62,9 @@ nav .btn{padding:8px 18px;font-size:15px}
 .dots{display:flex;gap:6px;padding:2px 6px 10px}.dots i{width:11px;height:11px;border-radius:50%;background:#3a3d43}
 .dots i:nth-child(1){background:#ff5f57}.dots i:nth-child(2){background:#febc2e}.dots i:nth-child(3){background:#28c840}
 #wrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:10px;background:var(--bg2)}
-#stage{position:absolute;top:0;right:0;width:960px;height:540px;transform-origin:top right;font-size:13px}
+#wrap video{display:block;width:100%;height:100%}
 .cap{min-height:54px;margin-top:12px;font-size:17px;font-weight:700;color:#dfe3e8}
 .cap small{display:block;color:var(--mut);font-size:14px;font-weight:600}
-
-/* the little app inside the demo */
-.a{position:absolute;inset:0;display:grid;grid-template-rows:42px 1fr;background:var(--bg2)}
-.a .tb{display:flex;align-items:center;gap:8px;padding:0 12px;background:var(--panel);border-bottom:1px solid var(--line)}
-.a .tb b{font-size:14px;display:flex;gap:6px;align-items:center}.a .tb b i{width:20px;height:20px;border-radius:6px;background:var(--acc);display:inline-block;position:relative}
-.a .tb b i::before,.a .tb b i::after{content:"";position:absolute;background:#fff;border-radius:2px}.a .tb b i::before{width:2px;height:12px;left:9px;top:4px}.a .tb b i::after{width:8px;height:2px;left:6px;top:8px}
-.a .tb .x{margin-right:auto;display:flex;gap:6px}.a .tb .x span{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:2px 10px;font-size:11px;font-weight:700}
-.a .tb .x span.b{background:var(--acc);border-color:var(--acc)}.a .tb .x span.r.on{background:var(--live);border-color:var(--live)}
-.a .m{display:grid;grid-template-columns:230px minmax(0,1fr) 300px;min-height:0}
-.a .lib{border-left:1px solid var(--line);padding:10px;display:flex;flex-direction:column;gap:8px;min-height:0}
-.a .tabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--bg2);border:1px solid var(--line);border-radius:9px;padding:3px}
-.a .tabs span{text-align:center;font-weight:800;font-size:11px;padding:4px;border-radius:7px;color:var(--mut)}.a .tabs span.on{background:var(--card);color:var(--txt)}
-.a .q{background:var(--bg2);border:1px solid var(--line);border-radius:9px;padding:6px 10px;min-height:30px;font-size:13px;font-weight:700}
-.a .q.f{border-color:var(--acc)}.a .q .car{display:inline-block;width:1.5px;height:14px;background:var(--acc);vertical-align:middle;animation:bl 1s steps(2) infinite}
-@keyframes bl{50%{opacity:0}}
-.a .res{display:flex;flex-direction:column;gap:3px;overflow:hidden}
-.a .it{display:flex;gap:8px;padding:6px 8px;border-radius:8px;border:1px solid transparent;font-size:12px;font-weight:700;align-items:flex-start;transition:all .2s}
-.a .it em{font-style:normal;min-width:28px;height:20px;border-radius:6px;background:var(--bg2);color:var(--mut);display:flex;align-items:center;justify-content:center;font-size:10px}
-.a .it small{display:block;color:var(--mut);font-weight:600;font-size:10px;line-height:1.5}
-.a .it.k{background:var(--card);border-color:var(--acc);box-shadow:0 0 0 1.5px var(--acc) inset}
-.a .mid{padding:10px 12px;display:flex;flex-direction:column;gap:8px;min-height:0;min-width:0;overflow:hidden;border-left:1px solid var(--line)}
-.a .ttl{font-weight:800;font-size:13px}.a .ttl small{color:var(--mut);font-weight:600;margin-right:6px}
-.a .sl{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.a .s{border-radius:10px;padding:16px 8px 8px;font-size:8.5px;line-height:1.75;text-align:center;font-weight:700;border:2px solid transparent;position:relative;min-height:96px}
-.a .s.w{background:#fff;color:#000}.a .s.k{background:#000;color:#fff}
-.a .s .lb{position:absolute;top:4px;right:6px;font-size:9px;background:#0002;border-radius:4px;padding:0 5px}.a .s.k .lb{background:#fff2}
-.a .s.cue{border-color:var(--acc)}.a .s.live{border-color:var(--live)}
-.a .vl{display:flex;flex-direction:column;gap:3px}
-.a .v{background:#000;color:#fff;border:1.5px solid transparent;border-radius:6px;padding:4px 34px 4px 8px;font-size:9.5px;position:relative;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.a .v i{position:absolute;right:6px;font-style:normal;font-size:9px;color:#aaa}.a .v.cue{border-color:var(--acc)}.a .v.live{border-color:var(--live)}
-.a .rt{padding:10px 12px;display:flex;flex-direction:column;gap:6px}
-.a .lbl{display:flex;justify-content:space-between;font-weight:800;font-size:11px}.a .lbl small{color:var(--mut);font-weight:600}
-.a .lbl .d{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--live);margin-left:5px}
-.a .scr{width:100%;aspect-ratio:16/9;border-radius:9px;border:3px solid var(--live);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:8.5px;line-height:1.85;padding:8px 14px;background:#000;color:#fff;transition:background .15s}
-.a .scr.w{background:#fff;color:#000}.a .scr.sm{width:62%;align-self:center;border-color:var(--acc);font-size:6px;border-width:2px}
-.a .ctl{display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:5px}.a .ctl span{background:var(--card);border:1px solid var(--line);border-radius:8px;text-align:center;font-weight:800;font-size:11px;padding:6px 0}.a .ctl span.g{background:var(--live);border-color:var(--live)}
-/* projector + keys overlay */
-.proj{position:absolute;left:345px;bottom:22px;width:260px;aspect-ratio:16/9;background:#000;border-radius:8px;border:2px solid #444;box-shadow:0 14px 40px #000c;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:9px;line-height:1.85;padding:10px 18px;color:#fff;transition:background .15s}
-.a .scr .r{display:block;font-size:6.5px;color:#999;font-weight:600;margin-top:4px}.proj.w{background:#fff;color:#000}.proj .r{display:block;font-size:7px;color:#999;font-weight:600;margin-top:5px}
-.proj::after{content:"البروجكتور";position:absolute;top:-22px;right:4px;font-size:11px;color:#bbb;font-weight:700}
-.keys{position:absolute;right:22px;bottom:26px;display:flex;gap:6px;direction:ltr;pointer-events:none}
-.keys span{background:#f4f4f5;color:#111;border-radius:9px;padding:5px 12px;font-weight:900;font-size:17px;box-shadow:0 4px 0 #b5b5b9,0 10px 24px #0008;animation:pop .2s}
-@keyframes pop{from{transform:translateY(8px);opacity:0}}
 
 /* sections */
 section{padding:56px 0 0}
@@ -182,30 +141,11 @@ footer{border-top:1px solid var(--line);padding:18px 0;color:var(--mut);font-siz
     <span class="ver" id="ver">مجاني بالكامل · بيشتغل من غير إنترنت · بيتحدّث لوحده</span>
   </div>
 
+  <div class="pills"><span>من كتاب ترنيمات روحية</span><span>الكتاب المقدس بالتشكيل</span><span>بحث حتى لو فيه غلطة</span><span>من غير إنترنت</span></div>
+
   <div class="demo">
     <div class="frame"><div class="dots"><i></i><i></i><i></i></div>
-      <div id="wrap"><div id="stage">
-        <div class="a">
-          <div class="tb"><b><i></i>ترنيمات روحية</b><div class="x"><span>طريقة الاستخدام</span><span>الخط والحجم</span><span class="r" id="dB">إخفاء الشاشة</span><span class="b">فتح شاشة العرض</span></div></div>
-          <div class="m">
-            <div class="lib">
-              <div class="tabs"><span class="on" id="tH">الترانيم</span><span id="tB">الكتاب المقدس</span></div>
-              <div class="q" id="dq"><span id="dqt"></span><span class="car"></span></div>
-              <div class="res" id="dres"></div>
-            </div>
-            <div class="mid"><div class="ttl" id="dttl"></div><div id="dslides"></div></div>
-            <div class="rt">
-              <div class="lbl"><span><span class="d"></span>على الشاشة الآن</span><small id="dlr"></small></div>
-              <div class="scr" id="dlive"></div>
-              <div class="lbl" style="width:62%;align-self:center"><span>التالي</span><small id="dcr"></small></div>
-              <div class="scr sm" id="dcue"></div>
-              <div class="ctl"><span>‹ التالي</span><span class="g">▶ اعرض</span><span>السابق ›</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="proj" id="dproj"></div>
-        <div class="keys" id="dkeys"></div>
-      </div></div>
+      <div id="wrap"><video id="vid" src="img/demo.mp4" poster="img/demo-poster.webp" autoplay muted loop playsinline preload="auto"></video></div>
     </div>
     <div class="cap" id="cap"></div>
   </div>
@@ -289,83 +229,16 @@ document.getElementById('regf').addEventListener('submit', async e => {
   document.getElementById('reg').classList.remove('open'); location.href = pending;
 });
 
-// ---- the demo: a small copy of the app that plays by itself ----
-const wrap = document.getElementById('wrap'), stage = document.getElementById('stage');
-function fit() { stage.style.transform = `scale(${wrap.clientWidth / 960})`; }
-addEventListener('resize', fit); fit();
-const $ = id => document.getElementById(id), wait = ms => new Promise(r => setTimeout(r, ms));
-const H182 = [['1', ['بِاسْمِكَ يَا رَبُّ تَجْمَعُنَا', 'حَوْلَ شَخْصِكَ بِالْحُبِّ النَّقِيّ', 'هَكَذَا نَفْرَحُ مَعًا هُنَا', 'نُذِيعُ مَوْتَكَ حَتَّى تَجِي']], ['2', ['حَوْلَكَ يَا رَبُّ كَنِيسَتُكْ', 'تَسْجُدُ حَتَّى اللِّقَاءِ الْقَرِيبْ', 'نَأْكُلُ الْخُبْزَ وَنَشْرَبُ الْكَأْسْ', 'كَيْ نَذْكُرَ حُبَّكَ يَا حَبِيبْ']], ['3', ['فِي حُضُورِكَ الْقَلْبُ يَفْرَحُ', 'وَنَسْجُدُ بِحُرِّيَّةِ الرُّوحْ', 'وَحَوْلَكَ نَحْنُ نُسَبِّحُ', 'لَكَ أَيُّهَا الْخَرُوفُ الْمَذْبُوحْ']]];
-const H285 = [['1', ['أَنْتَ لِي الْمَنُّ الَّذِي يُشْبِعُ قَلْبِي', 'لا يَجُوعُ الْقَلْبُ حَاشَا', 'حُبُّكَ النَّهْرُ الَّذِي يُرْوِينِي رَبِّي', 'نَفْسِي لا تَحْتَارُ عَطْشَى']], ['ق', ['فِيكَ مَا أَرْجُو وَأَكْثَرْ', 'أَنْتَ لِلنُّعْمَاءِ مَصْدَرْ', 'أَنْتَ لِلنُّعْمَاءِ مَصْدَرْ']], ['2', ['أَنْتَ لِي الرَّاعِي الَّذِي يَرْعَى وُجُودِي', 'لا يَخَافُ الْقَلْبُ وَحْشَا', 'أَنْتَ لِي الْحِصْنُ وَفِيكَ كُلُّ جُودِ', 'مِنْ عِدَايَ لَسْتُ أَخْشَى']]];
-const JN = ['فِي الْبَدْءِ كَانَ الْكَلِمَةُ…', 'هَذَا كَانَ فِي الْبَدْءِ عِنْدَ اللهِ…', 'أَجَابَ يَسُوعُ وَقَالَ لَهُ: «الْحَقَّ الْحَقَّ…', 'قَالَ لَهُ نِيقُودِيمُوسُ: «كَيْفَ يُمْكِنُ…', 'أَجَابَ يَسُوعُ: «الْحَقَّ الْحَقَّ أَقُولُ لَكَ…', 'اَلْمَوْلُودُ مِنَ الْجَسَدِ جَسَدٌ هُوَ…'];
-const V16 = 'لِأَنَّهُ هَكَذَا أَحَبَّ اللهُ الْعَالَمَ حَتَّى بَذَلَ ابْنَهُ الْوَحِيدَ، لِكَيْ لَا يَهْلِكَ كُلُّ مَنْ يُؤْمِنُ بِهِ، بَلْ تَكُونُ لَهُ الْحَيَاةُ الْأَبَدِيَّةُ.';
-const V17 = 'لِأَنَّهُ لَمْ يُرْسِلِ اللهُ ابْنَهُ إِلَى الْعَالَمِ لِيَدِينَ الْعَالَمَ، بَلْ لِيَخْلُصَ بِهِ الْعَالَمُ.';
-const ar = n => String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
-const lab = l => l === 'ق' ? 'القرار' : 'العدد ' + l;
-let cur = null;
-function cap(t, s) { $('cap').innerHTML = t + (s ? '<small>' + s + '</small>' : ''); }
-function keys(arr) { $('dkeys').innerHTML = arr.map(k => '<span>' + k + '</span>').join(''); }
-function list(items, k) { $('dres').innerHTML = items.map((x, i) => `<div class="it${i === k ? ' k' : ''}">${x[0] !== '' ? '<em>' + x[0] + '</em>' : ''}<div>${x[1]}${x[2] ? '<small>' + x[2] + '</small>' : ''}</div></div>`).join(''); }
-function hymn(n, title, H, live) {
-  cur = { n, H };
-  $('dttl').innerHTML = `ترنيمة ${n}<small>${title}</small>`;
-  $('dslides').className = 'sl';
-  $('dslides').innerHTML = H.map((s, i) => `<div class="s ${i % 2 ? 'k' : 'w'}${i === live ? ' live' : ''}${i === live + 1 ? ' cue' : ''}"><span class="lb">${lab(s[0])}</span>${s[1].slice(0, 3).join('<br>')}</div>`).join('');
-  show(H[live][1].join('<br>'), i => i % 2, live, `ترنيمة ${n} · ${lab(H[live][0])}`);
-  const nx = H[live + 1]; $('dcue').className = 'scr sm' + ((live + 1) % 2 ? '' : ' w'); $('dcue').innerHTML = nx ? nx[1].join('<br>') : ''; $('dcr').textContent = nx ? `ترنيمة ${n} · ${lab(nx[0])}` : '';
+// ---- the demo video (recorded from the real app): captions follow the video ----
+const CAPS = [[0.5, "ترنيمة بالرقم", "اكتب رقم الترنيمة ودوس Enter"], [4.16, "وبعدها رقم العدد بس", "طول ما الترنيمة مفتوحة: 2 Enter = العدد التاني"], [7.65, "قلّب بالأسهم", "← الشريحة الجاية"], [9.67, "أو دوّر بأي كلمة", "حتى لو فيها غلطة — انزل بالأسهم و Enter"], [16.4, "الكتاب المقدس باختصار الشاهد", "يو ٣ ١٦ + Enter — فان دايك بالتشكيل"], [21.75, "وبعدها رقم الآية بس", "17 Enter = الآية اللي بعدها في نفس الإصحاح"], [25.08, "إخفاء الشاشة", "حرف B — إنجليزي أو عربي"]];
+const vid = document.getElementById('vid'), capEl = document.getElementById('cap');
+let lastCap = -1;
+function showCap() {
+  const t = vid.currentTime; let i = 0;
+  for (let k = 0; k < CAPS.length; k++) if (t >= CAPS[k][0]) i = k;
+  if (i !== lastCap) { lastCap = i; capEl.innerHTML = CAPS[i][1] + '<small>' + CAPS[i][2] + '</small>'; }
 }
-function show(html, dark, i, ref) {
-  const w = typeof dark === 'function' ? !dark(i) : !dark;
-  $('dlive').className = 'scr' + (w ? ' w' : ''); $('dlive').innerHTML = html; $('dlr').textContent = ref;
-  $('dproj').className = 'proj' + (w ? ' w' : ''); $('dproj').innerHTML = html.replace(/<br>/g, ' ').length > 120 ? html : html;
-}
-function chapter(live) {
-  $('dttl').innerHTML = 'يوحنا<small>الإصحاح ٣</small>';
-  $('dslides').className = 'vl';
-  const rows = JN.map((t, i) => [i + 1, t]).concat([[16, V16], [17, V17], [18, 'اَلَّذِي يُؤْمِنُ بِهِ لَا يُدَانُ…']]);
-  $('dslides').innerHTML = rows.map(r => `<div class="v${r[0] === live ? ' live' : ''}${r[0] === live + 1 ? ' cue' : ''}"><i>آية ${ar(r[0])}</i>${r[1]}</div>`).join('');
-  const t = live === 16 ? V16 : V17;
-  show(t + `<span class="r">يوحنا ٣: ${ar(live)}</span>`, true, 0, 'يوحنا ٣: ' + ar(live));
-  $('dcue').className = 'scr sm'; $('dcue').innerHTML = live === 16 ? V17 : 'اَلَّذِي يُؤْمِنُ بِهِ لَا يُدَانُ…'; $('dcr').textContent = 'يوحنا ٣: ' + ar(live + 1);
-}
-async function type(t, ms = 110) { $('dq').classList.add('f'); for (let i = 1; i <= t.length; i++) { $('dqt').textContent = t.slice(0, i); await wait(ms); } }
-async function press(arr, gap = 380) { const shown = []; for (const k of arr) { shown.push(k); keys(shown); await wait(gap); } }
-function tab(b) { $('tH').classList.toggle('on', !b); $('tB').classList.toggle('on', b); }
-async function loop() {
-  for (;;) {
-    // 1) number
-    tab(false); $('dqt').textContent = ''; $('dq').classList.remove('f'); keys([]);
-    list([['181', 'بِاسْمِ يَسُوعَ نَجْتَمِعُ'], ['182', 'بِاسْمِكَ يَا رَبُّ تَجْمَعُنَا'], ['183', 'يا رب ما احلى الحياة قربك'], ['184', 'نحن نسجد لك يا ربنا'], ['185', 'باسمك يا رب ندعو']]);
-    hymn(109, 'يا مخلصي اصحبني', [['1', ['يَا مُخَلِّصِي اصْحَبَنِّي', 'كُنْ لِي دَوْمًا مُرْشِدًا']], ['ق', ['لَسْتُ مِنْ شَرٍّ أَخَافُ', 'فَاهْدِنِي حَيْثُ تُرِيدْ']]], 0);
-    cap('ترنيمة بالرقم', 'اكتب رقم الترنيمة ودوس Enter — تظهر على البروجكتور على طول');
-    await wait(1400); await press(['1', '8', '2', 'Enter']); hymn(182, 'بِاسْمِكَ يَا رَبُّ تَجْمَعُنَا', H182, 0); list([['182', 'بِاسْمِكَ يَا رَبُّ تَجْمَعُنَا']], 0);
-    await wait(2200);
-    cap('وبعدها رقم العدد بس', 'طول ما الترنيمة مفتوحة: 2 Enter = العدد التاني'); keys([]);
-    await wait(900); await press(['2', 'Enter']); hymn(182, 'بِاسْمِكَ يَا رَبُّ تَجْمَعُنَا', H182, 1);
-    await wait(2600);
-    // 2) words
-    cap('أو بأي كلمة من الترنيمة', 'حتى من غير همزة أو بغلطة — وتنزل بالأسهم وتدوس Enter'); keys([]);
-    await wait(700); await type('انت لي المن');
-    list([['285', 'أَنْتَ لِي الْمَنُّ الَّذِي يُشْبِعُ قَلْبِي', 'العدد ١: أنت لي المن الذي يشبع قلبي'], ['109', 'يا مخلصي اصحبني', 'العدد ٣: الخطوب الا انت يا حبيبي ترثي لي'], ['363', 'صوته الحلو اتاني', 'العدد ٣: ربي لي فرح وعزا من كل دا لي دوا'], ['362', 'انت ليك قصد في حياتي', 'العدد ٢: منك انت الحكمة نازلة']]);
-    await wait(900); await press(['↓'], 300); list([['285', 'أَنْتَ لِي الْمَنُّ الَّذِي يُشْبِعُ قَلْبِي', 'العدد ١: أنت لي المن الذي يشبع قلبي'], ['109', 'يا مخلصي اصحبني', 'العدد ٣: الخطوب الا انت يا حبيبي ترثي لي'], ['363', 'صوته الحلو اتاني', 'العدد ٣: ربي لي فرح وعزا من كل دا لي دوا'], ['362', 'انت ليك قصد في حياتي', 'العدد ٢: منك انت الحكمة نازلة']], 0);
-    await wait(500); await press(['↓', 'Enter'], 420); hymn(285, 'أَنْتَ لِي الْمَنُّ الَّذِي يُشْبِعُ قَلْبِي', H285, 0); $('dq').classList.remove('f');
-    await wait(2600);
-    // 3) Bible
-    tab(true); keys([]); $('dqt').textContent = ''; list([]);
-    cap('الكتاب المقدس باختصار الشاهد', 'يو ٣ ١٦ + Enter — فان دايك بالتشكيل');
-    await wait(600); await type('يو ٣ ١٦', 160); list([['', 'يوحنا ٣: ١٦', 'لأنه هكذا أحب الله العالم…']], 0);
-    await wait(600); await press(['Enter']); chapter(16); $('dq').classList.remove('f'); $('dqt').textContent = '';
-    await wait(2600);
-    cap('وبعدها رقم الآية بس', '17 Enter = الآية اللي بعدها في نفس الإصحاح'); keys([]);
-    await wait(700); await press(['1', '7', 'Enter']); chapter(17);
-    await wait(2400);
-    // 4) B
-    cap('حرف B يخفي الشاشة', 'سواء الكيبورد إنجليزي أو عربي — ودوسة تانية ترجّع الكلام'); keys([]);
-    await wait(900); await press(['B']); $('dB').classList.add('on'); const keep = $('dproj').innerHTML; $('dproj').className = 'proj'; $('dproj').innerHTML = '';
-    await wait(1800); keys([]); await press(['B']); $('dB').classList.remove('on'); $('dproj').innerHTML = keep;
-    await wait(2200);
-  }
-}
-loop();
+vid.addEventListener('timeupdate', showCap); showCap();
 </script>
 </body>
 </html>
