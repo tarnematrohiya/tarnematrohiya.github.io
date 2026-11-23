@@ -87,6 +87,31 @@ h2{font-size:28px;line-height:1.3;margin:0 0 22px;text-align:center;font-weight:
 .final{text-align:center;padding:50px 0 44px}
 footer{border-top:1px solid var(--line);padding:18px 0;color:var(--mut);font-size:13px;text-align:center}
 
+
+/* top notice + install guide with pictures */
+.note{background:#2a2315;border-bottom:1px solid #5c4a1e;color:#f1e3c0;font-size:14.5px;text-align:center;padding:9px 16px;line-height:1.6}
+.note b{color:#ffd88a}.note a{color:#ffd88a;font-weight:800}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.gs{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.gs h3{margin:0 0 4px;font-size:17px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.gs h3 .tag{white-space:nowrap;font-size:12px;background:#3b82f62b;color:#8fb8ff;border-radius:999px;padding:1px 10px}
+.gs p{margin:0 0 12px;color:#b5bac1;font-size:14.5px}
+.gs ol{margin:0 0 12px;padding-right:20px;color:#cfd3d9;font-size:14.5px}
+.pic{direction:ltr;text-align:left;font-family:"Segoe UI",Tahoma,sans-serif;border-radius:10px;overflow:hidden;font-size:12.5px;line-height:1.45;box-shadow:0 10px 30px #0008}
+.pic .hl{outline:2.5px solid #ffcc00;outline-offset:2px;border-radius:3px;position:relative}
+.pic .hl::after{content:attr(data-n);position:absolute;top:-11px;right:-11px;width:20px;height:20px;border-radius:50%;background:#ffcc00;color:#000;font:900 12px C,sans-serif;display:flex;align-items:center;justify-content:center}
+.ss{background:#0063b1;color:#fff;padding:16px 18px}
+.ss h4{margin:0 0 8px;font-size:19px;font-weight:400}
+.ss u{color:#fff}.ss .row{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+.ss .row span{border:2px solid #fff;padding:4px 16px}
+.sac{background:#2b2b2b;color:#fff;padding:16px 18px}
+.sac h4{margin:0 0 8px;font-size:16px}
+.sac .row{display:flex;gap:8px;margin-top:14px}.sac .row span{flex:1;text-align:center;padding:6px;border-radius:4px;background:#3a3a3a}.sac .row span.ok{background:#e4d6ff;color:#000}
+.ws{background:#202020;color:#fff;padding:14px 18px}
+.ws .path{color:#bbb;font-size:12px;margin-bottom:10px}
+.ws .r{display:flex;align-items:center;gap:8px;margin:7px 0}.ws .r i{width:14px;height:14px;border-radius:50%;border:2px solid #aaa;display:inline-block}.ws .r i.on{border:4px solid #4cc2ff}
+@media (max-width:860px){.g{grid-template-columns:1fr}}
+
 /* download form */
 #reg{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
 #reg.open{display:flex}
@@ -130,6 +155,7 @@ footer{border-top:1px solid var(--line);padding:18px 0;color:var(--mut);font-siz
   <a class="l" href="#install">التسطيب</a>
   <a class="btn p dlbtn" href="https://github.com/tarnematrohiya/tarnemat-rohiya/releases/latest"><svg class="ic"><use href="#idl"/></svg>تحميل</a>
 </div></nav>
+<div class="note"><b>تنبيه:</b> Windows ممكن يقولك إن البرنامج "مش آمن" — ده طبيعي مع أي برنامج مجاني جديد، والبرنامج سليم. <a href="#install">شوف إزاي تسطّبه ↓</a></div>
 
 <header class="hero"><div class="w">
   <img class="logo" src="icon.png" alt="ترنيمات روحية">
@@ -172,13 +198,27 @@ footer{border-top:1px solid var(--line);padding:18px 0;color:var(--mut);font-siz
 </div></section>
 
 <section id="install"><div class="w">
-  <h2>التسطيب</h2>
+  <h2>التسطيب خطوة بخطوة</h2>
   <div class="inst">
     <div><span><b>نزّل البرنامج</b>نسخة <bdi>Windows 10 / 11</bdi>، أو <bdi>7 / 8</bdi> للكمبيوتر القديم.</span></div>
     <div><span><b>شغّل الملف</b>بيتسطّب لوحده ويعمل أيقونة على سطح المكتب.</span></div>
-    <div><span><b>وصّل البروجكتور</b>وزرار "طريقة الاستخدام" بيشرحلك كل حاجة.</span></div>
+    <div><span><b>وصّل البروجكتور</b>شاشة العرض بتفتح عليه لوحدها.</span></div>
   </div>
-  <div class="warn"><b>لو ظهرت شاشة زرقا من Windows:</b> دوس <bdi><b>More info</b></bdi> وبعدين <bdi><b>Run anyway</b></bdi>.<br><b>لو ظهرت "Smart App Control blocked":</b> افتح <bdi>Windows Security</bdi> ← <bdi>App &amp; browser control</bdi> ← <bdi>Smart App Control settings</bdi> واختار <bdi><b>Off</b></bdi>، وبعدين شغّل الملف تاني.</div>
+  <div class="g">
+    <div class="gs">
+      <h3>لو ظهرت شاشة زرقا</h3>
+      <p>بتظهر أول مرة بس مع أي برنامج جديد.</p>
+      <ol><li>دوس <bdi><b>More info</b></bdi></li><li>وبعدين <bdi><b>Run anyway</b></bdi></li></ol>
+      <div class="pic"><div class="ss"><h4>Windows protected your PC</h4>Microsoft Defender SmartScreen prevented an unrecognized app from starting. Running this app might put your PC at risk.<br><span class="hl" data-n="1"><u>More info</u></span><div class="row"><span class="hl" data-n="2">Run anyway</span><span>Don't run</span></div></div></div>
+    </div>
+    <div class="gs">
+      <h3>لو ظهرت "Smart App Control" <span class="tag">Windows 11 بس</span></h3>
+      <p>على بعض أجهزة Windows 11 بيظهر الشباك ده ومافيهوش "Run anyway". اعمل كده مرة واحدة:</p>
+      <ol><li>دوس <bdi><b>Okay</b></bdi></li><li>اكتب <bdi><b>Windows Security</b></bdi> في البحث جنب زرار Start وافتحه</li><li>ادخل <bdi><b>App &amp; browser control</b></bdi> ← <bdi><b>Smart App Control settings</b></bdi></li><li>اختار <bdi><b>Off</b></bdi> وشغّل الملف تاني</li></ol>
+      <div class="pic"><div class="sac"><h4>Smart App Control blocked an app that may be unsafe</h4>We blocked Tarnemat-Rohiya-Setup.exe because we could not verify its publisher…<div class="row"><span class="ok hl" data-n="1">Okay</span><span>Get apps from the Store</span></div></div>
+      <div class="ws"><div class="path">Windows Security › App &amp; browser control › Smart App Control</div><div class="r"><i></i>On</div><div class="r"><i></i>Evaluation</div><div class="r"><span class="hl" data-n="4" style="display:flex;align-items:center;gap:8px;padding-right:6px"><i class="on"></i>Off</span></div></div></div>
+    </div>
+  </div>
 </div></section>
 
 <section class="final"><div class="w">
