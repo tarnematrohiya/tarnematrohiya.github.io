@@ -171,7 +171,7 @@ footer{border-top:1px solid var(--line);padding:18px 0;color:var(--mut);font-siz
 
   <div class="demo">
     <div class="frame"><div class="dots"><i></i><i></i><i></i></div>
-      <div id="wrap"><video id="vid" src="img/demo.mp4" poster="img/demo-poster.webp" autoplay muted loop playsinline preload="auto"></video></div>
+      <div id="wrap"><video id="vid" src="img/demo.mp4?v=2" poster="img/demo-poster.webp?v=2" autoplay muted loop playsinline preload="auto"></video></div>
     </div>
     <div class="cap" id="cap"></div>
   </div>
@@ -202,7 +202,7 @@ footer{border-top:1px solid var(--line);padding:18px 0;color:var(--mut);font-siz
   <div class="inst">
     <div><span><b>نزّل البرنامج</b>نسخة <bdi>Windows 10 / 11</bdi>، أو <bdi>7 / 8</bdi> للكمبيوتر القديم.</span></div>
     <div><span><b>شغّل الملف</b>بيتسطّب لوحده ويعمل أيقونة على سطح المكتب.</span></div>
-    <div><span><b>وصّل البروجكتور</b>شاشة العرض بتفتح عليه لوحدها.</span></div>
+    <div><span><b>وصّل البروجكتور</b>واعمل <bdi>Extend</bdi> (ويندوز + <bdi>P</bdi>) وشاشة العرض بتفتح عليه لوحدها.</span></div>
   </div>
   <div class="g">
     <div class="gs">
@@ -270,7 +270,7 @@ document.getElementById('regf').addEventListener('submit', async e => {
 });
 
 // ---- the demo video (recorded from the real app): captions follow the video ----
-const CAPS = [[0.5, "ترنيمة بالرقم", "اكتب رقم الترنيمة ودوس Enter"], [4.16, "وبعدها رقم العدد بس", "طول ما الترنيمة مفتوحة: 2 Enter = العدد التاني"], [7.65, "قلّب بالأسهم", "← الشريحة الجاية"], [9.67, "أو دوّر بأي كلمة", "حتى لو فيها غلطة — انزل بالأسهم و Enter"], [16.4, "الكتاب المقدس باختصار الشاهد", "يو ٣ ١٦ + Enter — فان دايك بالتشكيل"], [21.75, "وبعدها رقم الآية بس", "17 Enter = الآية اللي بعدها في نفس الإصحاح"], [25.08, "إخفاء الشاشة", "حرف B — إنجليزي أو عربي"]];
+const CAPS = [[0.5, "ترنيمة بالرقم", "اكتب رقم الترنيمة ودوس Enter"], [4.15, "وبعدها رقم العدد بس", "طول ما الترنيمة مفتوحة: 2 Enter = العدد التاني"], [7.640000000000001, "قلّب بالأسهم", "← الشريحة الجاية"], [9.66, "أو دوّر بأي كلمة", "حتى لو فيها غلطة — انزل بالأسهم و Enter"], [16.43, "الكتاب المقدس باختصار الشاهد", "يو ٣ ١٦ + Enter — فان دايك بالتشكيل"], [21.72, "وبعدها رقم الآية بس", "17 Enter = الآية اللي بعدها في نفس الإصحاح"], [25.18, "إخفاء الشاشة", "حرف B — إنجليزي أو عربي"]];
 const vid = document.getElementById('vid'), capEl = document.getElementById('cap');
 let lastCap = -1;
 function showCap() {
