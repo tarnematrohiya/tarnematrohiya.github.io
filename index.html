@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ترنيمات روحية — برنامج عرض الترانيم والكتاب المقدس للكنيسة</title>
-<meta name="description" content="برنامج مجاني لعرض الترانيم الروحية والكتاب المقدس (فان دايك المشكول) على البروجكتور في الكنيسة — Windows">
+<meta name="description" content="برنامج لعرض الترانيم الروحية والكتاب المقدس (فان دايك المشكول) على البروجكتور في الكنيسة — Windows">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ترنيمات روحية — للكنيسة">
-<meta property="og:description" content="برنامج مجاني لعرض الترانيم الروحية والكتاب المقدس على البروجكتور. بالرقم، بالكلمة، بالاختصار — ومن غير إنترنت.">
-<meta property="og:image" content="https://tarnematrohiya.github.io/preview.png?v=1">
+<meta property="og:description" content="برنامج لعرض الترانيم الروحية والكتاب المقدس على البروجكتور. بالرقم، بالكلمة، بالاختصار — ومن غير إنترنت.">
+<meta property="og:image" content="https://tarnematrohiya.github.io/preview.png?v=2">
 <meta property="og:image:width" content="1280"><meta property="og:image:height" content="640">
 <meta property="og:url" content="https://tarnematrohiya.github.io/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://tarnematrohiya.github.io/preview.png?v=1">
+<meta name="twitter:image" content="https://tarnematrohiya.github.io/preview.png?v=2">
 <link rel="icon" href="icon.png">
 <style>
 @font-face{font-family:C;src:url(fonts/Cairo.ttf);font-weight:200 1000;font-display:swap}
@@ -163,10 +163,10 @@ footer{border-top:1px solid var(--line);padding:18px 0;color:var(--mut);font-siz
   <div class="cta">
     <a class="btn p dlbtn" id="dl" href="https://github.com/tarnematrohiya/tarnemat-rohiya/releases/latest"><svg class="ic"><use href="#win"/></svg>تحميل لـ <bdi>Windows 10 / 11</bdi></a>
     <a class="btn s sm dlbtn" id="dl7" href="https://github.com/tarnematrohiya/tarnemat-rohiya/releases/latest">نسخة <bdi>Windows 7 / 8</bdi></a>
-    <span class="ver" id="ver">مجاني بالكامل · بيشتغل من غير إنترنت · بيتحدّث لوحده</span>
+    <span class="ver" id="ver">بيشتغل من غير إنترنت · بيتحدّث لوحده</span>
   </div>
 
-  <div class="note"><b>⚠ تنبيه:</b> Windows ممكن يقولك إن البرنامج "مش آمن" — ده طبيعي مع أي برنامج مجاني جديد، والبرنامج سليم.<br><a href="#install">شوف إزاي تسطّبه خطوة بخطوة ↓</a></div>
+  <div class="note"><b>⚠ تنبيه:</b> Windows ممكن يقولك إن البرنامج "مش آمن" — ده طبيعي مع أي برنامج جديد، والبرنامج سليم.<br><a href="#install">شوف إزاي تسطّبه خطوة بخطوة ↓</a></div>
   <div class="pills"><span>من كتاب ترنيمات روحية</span><span>الكتاب المقدس بالتشكيل</span><span>بحث حتى لو فيه غلطة</span><span>من غير إنترنت</span></div>
 
   <div class="demo">
@@ -222,10 +222,10 @@ footer{border-top:1px solid var(--line);padding:18px 0;color:var(--mut);font-siz
 </div></section>
 
 <section class="final"><div class="w">
-  <a class="btn p dlbtn" href="https://github.com/tarnematrohiya/tarnemat-rohiya/releases/latest"><svg class="ic"><use href="#idl"/></svg>تحميل ترنيمات روحية — مجاني</a>
+  <a class="btn p dlbtn" href="https://github.com/tarnematrohiya/tarnemat-rohiya/releases/latest"><svg class="ic"><use href="#idl"/></svg>تحميل ترنيمات روحية</a>
 </div></section>
 
-<footer><div class="w">ترنيمات روحية · مجاني لخدمة الكنيسة</div></footer>
+<footer><div class="w">ترنيمات روحية · لخدمة الكنيسة</div></footer>
 
 <div id="reg"><form id="regf">
   <h3>عرّفنا بيك وبكنيستك</h3>
@@ -244,7 +244,7 @@ fetch('https://api.github.com/repos/' + REPO + '/releases/latest').then(r => r.j
   const a = A.find(x => /^Tarnemat-Rohiya-Setup-[\d.]+\.exe$/.test(x.name)), b = A.find(x => /Win7-Setup-[\d.]+\.exe$/.test(x.name));
   if (a) document.querySelectorAll('.dlbtn:not(#dl7)').forEach(x => x.href = a.browser_download_url);
   if (b) document.getElementById('dl7').href = b.browser_download_url; else document.getElementById('dl7').style.display = 'none';
-  if (r.tag_name) document.getElementById('ver').innerHTML = 'النسخة <bdi dir="ltr">' + r.tag_name.replace(/^v/, '') + '</bdi> · مجاني بالكامل · بيشتغل من غير إنترنت · بيتحدّث لوحده';
+  if (r.tag_name) document.getElementById('ver').innerHTML = 'النسخة <bdi dir="ltr">' + r.tag_name.replace(/^v/, '') + '</bdi> · بيشتغل من غير إنترنت · بيتحدّث لوحده';
 }).catch(() => {});
 
 // ---- before the first download: name + church go to the service's Google Form (once per browser) ----
